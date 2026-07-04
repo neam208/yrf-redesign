@@ -368,15 +368,31 @@
       color: var(--white);
     }
 
-    .race-card__sponsor {
+    .race-card__sponsor-logo {
       align-self: flex-start;
       margin-bottom: auto;
-      padding: 7px 11px;
+      display: grid;
+      width: 148px;
+      min-height: 52px;
+      place-items: center;
+      padding: 9px 13px;
       border-radius: 999px;
       color: var(--navy-900);
       background: rgba(255, 255, 255, 0.92);
-      font-size: 0.74rem;
+      box-shadow: 0 10px 26px rgba(4, 7, 57, 0.2);
+    }
+
+    .race-card__sponsor-logo img {
+      max-width: 116px;
+      max-height: 34px;
+      object-fit: contain;
+    }
+
+    .race-card__sponsor-logo--wordmark {
+      font-size: 0.72rem;
       font-weight: 900;
+      line-height: 1.05;
+      text-align: center;
       text-transform: uppercase;
     }
 
@@ -725,13 +741,12 @@
         <div class="section-inner">
           <div class="section-heading">
             <h2>Choose your start line</h2>
-            <p>Each event card uses consistent image treatment and clearer calls to action so the race menu feels premium and easy to scan.</p>
           </div>
 
           <div class="race-grid">
             <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2024-YRF-29.jpg?w=2048&ssl=1')">
               <div class="race-card__content">
-                <span class="race-card__sponsor">Bendigo Bank</span>
+                <span class="race-card__sponsor-logo"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/bendigo-for-web-footer-copy-2.png" alt="Bendigo Bank"></span>
                 <h3>Marathon</h3>
                 <p>The headline distance for runners chasing the full coastal challenge.</p>
                 <a href="/redesign/marathon/">Explore race</a>
@@ -740,7 +755,7 @@
 
             <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-173.jpg?w=3000&ssl=1')">
               <div class="race-card__content">
-                <span class="race-card__sponsor">Half Marathon</span>
+                <span class="race-card__sponsor-logo"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/CQU-Cropped.png" alt="CQUniversity"></span>
                 <h3>21.1km</h3>
                 <p>A serious distance with a fast, scenic festival atmosphere.</p>
                 <a href="https://yrf.com.au/half-marathon/">Explore race</a>
@@ -749,7 +764,7 @@
 
             <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-63.jpg?w=3000&ssl=1')">
               <div class="race-card__content">
-                <span class="race-card__sponsor">CQ Radiology</span>
+                <span class="race-card__sponsor-logo"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/CQR-PMS186_Horiz-2-NEW-copy.png" alt="CQ Radiology"></span>
                 <h3>10km</h3>
                 <p>A strong race-day favourite for runners building speed and confidence.</p>
                 <a href="https://yrf.com.au/10km/">Explore race</a>
@@ -758,7 +773,7 @@
 
             <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2024-YRF-180.jpg?w=2048&ssl=1')">
               <div class="race-card__content">
-                <span class="race-card__sponsor">Pro Feet</span>
+                <span class="race-card__sponsor-logo"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/PRF_Master_Brand_Logo_PMS.jpg" alt="Pro Feet"></span>
                 <h3>5km</h3>
                 <p>Accessible, energetic, and ideal for teams, friends, and new runners.</p>
                 <a href="https://yrf.com.au/5km/">Explore race</a>
@@ -767,7 +782,7 @@
 
             <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-210.jpg?w=3000&ssl=1')">
               <div class="race-card__content">
-                <span class="race-card__sponsor">Ian Weigh Toyota</span>
+                <span class="race-card__sponsor-logo race-card__sponsor-logo--wordmark">Ian Weigh<br>Toyota</span>
                 <h3>2km</h3>
                 <p>A short-distance event with plenty of finish-line excitement.</p>
                 <a href="https://yrf.com.au/2km/">Explore race</a>
@@ -776,7 +791,7 @@
 
             <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2024/12/2023-YRF-34.jpg?w=3000&ssl=1')">
               <div class="race-card__content">
-                <span class="race-card__sponsor">JRT</span>
+                <span class="race-card__sponsor-logo"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/JRT-230v2.png" alt="JRT"></span>
                 <h3>Family Run</h3>
                 <p>A welcoming festival moment for families and the next wave of runners.</p>
                 <a href="https://yrf.com.au/family-fun-run/">Explore race</a>
