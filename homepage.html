@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yeppoon Running Festival | 25 & 26 July 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #070b61;
+      --navy-900: #040739;
+      --red: #c52f35;
+      --red-700: #a9272d;
+      --sky: #e9f5ff;
+      --ink: #10152f;
+      --muted: #67708a;
+      --sand: #f6f2e9;
+      --white: #ffffff;
+      --line: rgba(16, 21, 47, 0.12);
+      --shadow: 0 22px 55px rgba(7, 11, 97, 0.16);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-shell {
+      overflow: hidden;
+    }
+
+    .top-strip {
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .top-strip__inner,
+    .nav__inner,
+    .section-inner {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .top-strip__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 38px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav__inner {
+      display: grid;
+      grid-template-columns: 220px 1fr auto;
+      align-items: center;
+      gap: 28px;
+      min-height: 88px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      padding: 13px 18px;
+      border-radius: var(--radius);
+      background: var(--red);
+      box-shadow: 0 14px 28px rgba(197, 47, 53, 0.18);
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 184px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--navy-900);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .nav-links a::after {
+      position: absolute;
+      right: 0;
+      bottom: 4px;
+      left: 0;
+      height: 2px;
+      background: var(--red);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 2px solid transparent;
+      border-radius: var(--radius);
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button--primary {
+      color: var(--white);
+      background: var(--red);
+      box-shadow: 0 14px 32px rgba(197, 47, 53, 0.28);
+    }
+
+    .button--primary:hover {
+      background: var(--red-700);
+    }
+
+    .button--light {
+      color: var(--navy);
+      background: var(--white);
+    }
+
+    .button--outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 560px;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(4, 7, 57, 0.92) 0%, rgba(7, 11, 97, 0.76) 42%, rgba(7, 11, 97, 0.16) 100%),
+        url("https://i0.wp.com/yrf.com.au/wp-content/uploads/2024/08/2023-YRF-74.jpg?resize=2048%2C1365&ssl=1") center / cover no-repeat;
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -8vw;
+      bottom: -72px;
+      width: 42vw;
+      height: 150px;
+      background: var(--red);
+      content: "";
+      transform: skewX(-24deg);
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 720px);
+      align-content: center;
+      min-height: 560px;
+      padding: 74px 0 104px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 54px;
+      height: 4px;
+      background: var(--red);
+      content: "";
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      margin: 0;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(3.7rem, 8vw, 7.15rem);
+      font-weight: 800;
+      line-height: 0.88;
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--red);
+    }
+
+    .hero p {
+      max-width: 610px;
+      margin: 28px 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(1.02rem, 2vw, 1.2rem);
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      width: min(1140px, calc(100% - 40px));
+      margin: -64px auto 0;
+      position: relative;
+      z-index: 3;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-stat {
+      min-height: 148px;
+      padding: 28px;
+      background: var(--white);
+    }
+
+    .hero-stat strong {
+      display: block;
+      color: var(--navy);
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 2.35rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .hero-stat span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 108px 0;
+    }
+
+    .section--soft {
+      background: linear-gradient(180deg, var(--sky), #ffffff);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+
+    .section-heading h2 {
+      max-width: 620px;
+      margin: 0;
+      color: var(--navy-900);
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(2.9rem, 6vw, 5.2rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .section-heading p {
+      max-width: 420px;
+      margin: 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .race-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .race-card {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--navy);
+      box-shadow: 0 16px 36px rgba(7, 11, 97, 0.14);
+      isolation: isolate;
+    }
+
+    .race-card::before {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: var(--image) center / cover no-repeat;
+      content: "";
+      transition: transform 260ms ease;
+    }
+
+    .race-card::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(4, 7, 57, 0.05) 0%, rgba(4, 7, 57, 0.34) 42%, rgba(4, 7, 57, 0.9) 100%);
+      content: "";
+    }
+
+    .race-card:hover::before {
+      transform: scale(1.04);
+    }
+
+    .race-card__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 420px;
+      padding: 28px;
+      color: var(--white);
+    }
+
+    .race-card__sponsor {
+      align-self: flex-start;
+      margin-bottom: auto;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--navy-900);
+      background: rgba(255, 255, 255, 0.92);
+      font-size: 0.74rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .race-card h3 {
+      margin: 0;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 3.4rem;
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .race-card p {
+      margin: 13px 0 20px;
+      color: rgba(255, 255, 255, 0.82);
+      font-weight: 700;
+    }
+
+    .race-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      color: var(--white);
+      font-weight: 900;
+    }
+
+    .race-card a::after {
+      content: "→";
+      color: var(--red);
+      font-size: 1.25rem;
+    }
+
+    .feature-band {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 46px;
+      align-items: center;
+      color: var(--white);
+      background: var(--navy-900);
+    }
+
+    .feature-media {
+      min-height: 520px;
+      background: url("https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-173.jpg?w=3000&ssl=1") center / cover no-repeat;
+    }
+
+    .feature-copy {
+      max-width: 580px;
+      padding: 72px 40px 72px 0;
+    }
+
+    .feature-copy h2 {
+      margin: 0;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+    }
+
+    .feature-copy p {
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 1.08rem;
+      font-weight: 600;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 14px;
+      margin: 30px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: center;
+      font-weight: 800;
+    }
+
+    .check-list li::before {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--red);
+      content: "✓";
+      font-size: 0.9rem;
+    }
+
+    .sponsor-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .sponsor {
+      display: grid;
+      min-height: 118px;
+      place-items: center;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .sponsor img {
+      max-width: 170px;
+      max-height: 64px;
+      object-fit: contain;
+      filter: saturate(0.92);
+    }
+
+    .footer {
+      color: var(--white);
+      background: var(--navy-900);
+    }
+
+    .footer__inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.8fr 0.8fr;
+      gap: 34px;
+      padding: 64px 0;
+    }
+
+    .footer img {
+      width: 210px;
+    }
+
+    .footer p,
+    .footer a {
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 600;
+    }
+
+    .footer h3 {
+      margin: 0 0 16px;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .footer ul {
+      display: grid;
+      gap: 9px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 18px 0;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 940px) {
+      .nav__inner {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 16px 22px;
+      }
+
+      .nav .button {
+        width: fit-content;
+      }
+
+      .hero,
+      .hero__inner {
+        min-height: 560px;
+      }
+
+      .hero-stats,
+      .race-grid,
+      .footer__inner {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-band {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-media {
+        min-height: 360px;
+      }
+
+      .feature-copy {
+        max-width: none;
+        padding: 0 40px 64px;
+      }
+
+      .sponsor-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .top-strip__inner,
+      .nav__inner,
+      .section-inner,
+      .hero-stats {
+        width: min(100% - 28px, 1140px);
+      }
+
+      .top-strip__inner {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+        padding: 9px 0;
+      }
+
+      .brand img {
+        width: 158px;
+      }
+
+      .nav__inner {
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+      }
+
+      .nav .button {
+        min-height: 48px;
+        padding-inline: 18px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 570px;
+        background-position: 62% center;
+      }
+
+      .hero__inner {
+        min-height: 570px;
+        padding: 64px 0 104px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.6rem, 18vw, 5.2rem);
+      }
+
+      .hero__actions .button {
+        width: 100%;
+      }
+
+      .hero-stats {
+        margin-top: -52px;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .race-card,
+      .race-card__content {
+        min-height: 360px;
+      }
+
+      .sponsor-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-copy {
+        padding: 0 24px 58px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <div class="top-strip">
+      <div class="top-strip__inner">
+        <span>Yeppoon, Queensland</span>
+        <span>Saturday & Sunday · 25 & 26 July 2026</span>
+      </div>
+    </div>
+
+    <header class="nav" aria-label="Site header">
+      <div class="nav__inner">
+        <a class="brand" href="https://yrf.com.au/" aria-label="Yeppoon Running Festival home">
+          <img src="https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/YRF_SSP_Logo-copy-1.png?w=1500&ssl=1" alt="Yeppoon Running Festival">
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="https://yrf.com.au/">Home</a>
+          <a href="https://yrf.com.au/marathon/">Events</a>
+          <a href="https://yrf.com.au/race-times/">Race Info</a>
+          <a href="https://yrf.com.au/visit-yeppoon/">Visit Yeppoon</a>
+          <a href="https://yrf.com.au/faq/">FAQ</a>
+          <a href="https://yrf.com.au/contact/">Contact</a>
+        </nav>
+        <a class="button button--primary" href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Register Now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="section-inner hero__inner">
+          <div>
+            <p class="eyebrow">Yeppoon Running Festival</p>
+            <h1>Run the coast <span>25 & 26 July</span></h1>
+            <p>A destination running weekend across Yeppoon's coastline, with race options for marathoners, weekend runners, families, and first-time finishers.</p>
+            <div class="hero__actions">
+              <a class="button button--light" href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Register Now</a>
+              <a class="button button--outline" href="https://yrf.com.au/race-times/">View Race Times</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="hero-stats" aria-label="Event highlights">
+        <div class="hero-stat">
+          <strong>6 Events</strong>
+          <span>From family run to marathon distance.</span>
+        </div>
+        <div class="hero-stat">
+          <strong>2 Days</strong>
+          <span>A full weekend of racing in Yeppoon.</span>
+        </div>
+        <div class="hero-stat">
+          <strong>Coastal Course</strong>
+          <span>Ocean views, community energy, strong finish-line atmosphere.</span>
+        </div>
+      </div>
+
+      <section class="section section--soft">
+        <div class="section-inner">
+          <div class="section-heading">
+            <h2>Choose your start line</h2>
+            <p>Each event card uses consistent image treatment and clearer calls to action so the race menu feels premium and easy to scan.</p>
+          </div>
+
+          <div class="race-grid">
+            <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2024-YRF-29.jpg?w=2048&ssl=1')">
+              <div class="race-card__content">
+                <span class="race-card__sponsor">Bendigo Bank</span>
+                <h3>Marathon</h3>
+                <p>The headline distance for runners chasing the full coastal challenge.</p>
+                <a href="https://yrf.com.au/marathon/">Explore race</a>
+              </div>
+            </article>
+
+            <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-173.jpg?w=3000&ssl=1')">
+              <div class="race-card__content">
+                <span class="race-card__sponsor">Half Marathon</span>
+                <h3>21.1km</h3>
+                <p>A serious distance with a fast, scenic festival atmosphere.</p>
+                <a href="https://yrf.com.au/half-marathon/">Explore race</a>
+              </div>
+            </article>
+
+            <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-63.jpg?w=3000&ssl=1')">
+              <div class="race-card__content">
+                <span class="race-card__sponsor">CQ Radiology</span>
+                <h3>10km</h3>
+                <p>A strong race-day favourite for runners building speed and confidence.</p>
+                <a href="https://yrf.com.au/10km/">Explore race</a>
+              </div>
+            </article>
+
+            <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2024-YRF-180.jpg?w=2048&ssl=1')">
+              <div class="race-card__content">
+                <span class="race-card__sponsor">Pro Feet</span>
+                <h3>5km</h3>
+                <p>Accessible, energetic, and ideal for teams, friends, and new runners.</p>
+                <a href="https://yrf.com.au/5km/">Explore race</a>
+              </div>
+            </article>
+
+            <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-210.jpg?w=3000&ssl=1')">
+              <div class="race-card__content">
+                <span class="race-card__sponsor">Ian Weigh Toyota</span>
+                <h3>2km</h3>
+                <p>A short-distance event with plenty of finish-line excitement.</p>
+                <a href="https://yrf.com.au/2km/">Explore race</a>
+              </div>
+            </article>
+
+            <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2024/12/2023-YRF-34.jpg?w=3000&ssl=1')">
+              <div class="race-card__content">
+                <span class="race-card__sponsor">JRT</span>
+                <h3>Family Run</h3>
+                <p>A welcoming festival moment for families and the next wave of runners.</p>
+                <a href="https://yrf.com.au/family-fun-run/">Explore race</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-band">
+        <div class="feature-media" aria-hidden="true"></div>
+        <div class="feature-copy">
+          <h2>A better first impression for a serious community event</h2>
+          <p>The design leans into your existing identity but gives it the professional cues people expect before registering: crisp hierarchy, stronger contrast, purposeful photography, and fewer awkward decorative shapes.</p>
+          <ul class="check-list">
+            <li>Clear registration and race information pathways</li>
+            <li>Consistent card system for every event distance</li>
+            <li>Responsive layout for mobile, tablet, and desktop</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-heading">
+            <h2>Backed by local partners</h2>
+            <p>Sponsor marks are presented in a calmer grid so the logos feel official and easier to read.</p>
+          </div>
+
+          <div class="sponsor-grid" aria-label="Sponsors">
+            <a class="sponsor" href="https://yrf.com.au/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/SSP-350.png" alt="Shanahan Swaffield Partners"></a>
+            <a class="sponsor" href="https://yrf.com.au/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/CQU-Cropped.png" alt="CQU University"></a>
+            <a class="sponsor" href="https://yrf.com.au/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/bendigo-for-web-footer-copy-2.png" alt="Bendigo Bank"></a>
+            <a class="sponsor" href="https://yrf.com.au/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/CQR-PMS186_Horiz-2-NEW-copy.png" alt="CQ Radiology"></a>
+            <a class="sponsor" href="https://yrf.com.au/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/JRT-230v2.png" alt="JRT"></a>
+            <a class="sponsor" href="https://yrf.com.au/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/PRF_Master_Brand_Logo_PMS.jpg" alt="Pro Feet"></a>
+            <a class="sponsor" href="https://yrf.com.au/"><img src="https://yrf.com.au/wp-content/uploads/2025/10/ASN-Hi-Res.png" alt="ASN"></a>
+            <a class="sponsor" href="https://yrf.com.au/"><img src="https://yrf.com.au/wp-content/uploads/2026/04/Logo_Mater-Colour.png" alt="Mater Private Hospital Rockhampton"></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="section-inner footer__inner">
+        <div>
+          <img src="https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/YRF_SSP_Logo-copy-1.png?w=1500&ssl=1" alt="Yeppoon Running Festival">
+          <p>Yeppoon Running Festival brings runners, families, supporters, and local partners together for a coastal race weekend in Central Queensland.</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:yrf@thechangeroom.net.au">yrf@thechangeroom.net.au</a></li>
+            <li><a href="https://yrf.com.au/contact/">Yeppoon, QLD</a></li>
+            <li><a href="https://yrf.com.au/faq/">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Useful links</h3>
+          <ul>
+            <li><a href="https://yrf.com.au/race-times/">Race Times</a></li>
+            <li><a href="https://yrf.com.au/yrf-program/">Competitor Guide</a></li>
+            <li><a href="https://yrf.com.au/race-results/">Results</a></li>
+            <li><a href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Register Now</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="section-inner">Yeppoon Running Festival 2026. All rights reserved.</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
