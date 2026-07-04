@@ -489,13 +489,13 @@
 
     .sponsor-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 14px;
     }
 
     .sponsor {
       display: grid;
-      min-height: 118px;
+      min-height: 128px;
       place-items: center;
       padding: 22px;
       border: 1px solid var(--line);
@@ -782,7 +782,7 @@
 
             <article class="race-card" style="--image: url('https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-210.jpg?w=3000&ssl=1')">
               <div class="race-card__content">
-                <span class="race-card__sponsor-logo race-card__sponsor-logo--wordmark">Ian Weigh<br>Toyota</span>
+                <span class="race-card__sponsor-logo"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2026/02/Toyota-Dealership-Ian-Weigh-Vertical-Black.png" alt="Ian Weigh Toyota"></span>
                 <h3>2km</h3>
                 <p>A short-distance event with plenty of finish-line excitement.</p>
                 <a href="https://yrf.com.au/2km/">Explore race</a>
@@ -822,14 +822,23 @@
           </div>
 
           <div class="sponsor-grid" aria-label="Sponsors">
-            <a class="sponsor" href="/redesign/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/SSP-350.png" alt="Shanahan Swaffield Partners"></a>
-            <a class="sponsor" href="/redesign/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/CQU-Cropped.png" alt="CQU University"></a>
-            <a class="sponsor" href="/redesign/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/bendigo-for-web-footer-copy-2.png" alt="Bendigo Bank"></a>
-            <a class="sponsor" href="/redesign/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/CQR-PMS186_Horiz-2-NEW-copy.png" alt="CQ Radiology"></a>
-            <a class="sponsor" href="/redesign/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/JRT-230v2.png" alt="JRT"></a>
-            <a class="sponsor" href="/redesign/"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/PRF_Master_Brand_Logo_PMS.jpg" alt="Pro Feet"></a>
-            <a class="sponsor" href="/redesign/"><img src="https://yrf.com.au/wp-content/uploads/2025/10/ASN-Hi-Res.png" alt="ASN"></a>
-            <a class="sponsor" href="/redesign/"><img src="https://yrf.com.au/wp-content/uploads/2026/04/Logo_Mater-Colour.png" alt="Mater Private Hospital Rockhampton"></a>
+            <a class="sponsor" href="https://sspaccountants.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/SSP-350.png" alt="Shanahan Swaffield Partners"></a>
+            <a class="sponsor" href="https://www.cqu.edu.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/CQU-Cropped.png" alt="CQU University"></a>
+            <a class="sponsor" href="https://www.bendigobank.com.au/branch/qld/community-bank-yeppoon/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/bendigo-for-web-footer-copy-2.png" alt="Bendigo Bank"></a>
+            <a class="sponsor" href="https://cqradiology.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/CQR-PMS186_Horiz-2-NEW-copy.png" alt="CQ Radiology"></a>
+            <a class="sponsor" href="https://www.jrtgroup.com/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/JRT-230v2.png" alt="JRT"></a>
+            <a class="sponsor" href="https://www.profeetpodiatry.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/PRF_Master_Brand_Logo_PMS.jpg" alt="Pro Feet"></a>
+            <a class="sponsor" href="https://www.ianweightoyota.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2026/02/Toyota-Dealership-Ian-Weigh-Vertical-Black.png" alt="Ian Weigh Toyota"></a>
+            <a class="sponsor" href="https://kbsc.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/Keppel-Bay-Sailing-Club_Logo-Stacked.png" alt="Keppel Bay Sailing Club"></a>
+            <a class="sponsor" href="https://movementimprovement.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/move-improve-footer.png" alt="Movement Improvement"></a>
+            <a class="sponsor" href="https://shokz.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/02/Shokz_Logo_RGB.png" alt="Shokz"></a>
+            <a class="sponsor" href="https://www.raywhite.com/office/yeppoon.qld?type=selling" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/03/Ray-White-primary-logo-yellow-CMYK-nads.jpg" alt="Ray White"></a>
+            <a class="sponsor" href="https://ventou.com.au/custom-running-apparel-australia" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2022/08/Untitled-design-31.png" alt="Ventou"></a>
+            <a class="sponsor" href="https://www.cooberriepark.com.au" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/Cooberrie-Park-Logo-copy.png" alt="Cooberrie Park"></a>
+            <a class="sponsor" href="https://aussiegold.net.au" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2022/08/Untitled-design-34.png" alt="Aussie Gold"></a>
+            <a class="sponsor" href="https://www.keppeldental.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2026/02/KD-Logo_Landscape_CMYK.png" alt="Keppel Dental"></a>
+            <a class="sponsor" href="https://www.australiansportsnutrition.com.au/pages/asn-yeppoon?srsltid=AfmBOor1H1B2FwDL1UbxOfr82pE7HFJQ5FRpVf7uaFYZ6ceDJYqvXP1X" target="_blank" rel="noopener"><img src="https://yrf.com.au/wp-content/uploads/2025/10/ASN-Hi-Res.png" alt="ASN"></a>
+            <a class="sponsor" href="https://www.mater.org.au/group/news/mater-private-hospital-rockhampton" target="_blank" rel="noopener"><img src="https://yrf.com.au/wp-content/uploads/2026/04/Logo_Mater-Colour.png" alt="Mater Private Hospital Rockhampton"></a>
           </div>
         </div>
       </section>
