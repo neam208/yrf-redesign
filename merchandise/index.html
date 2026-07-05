@@ -140,6 +140,11 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      border: 0;
+      background: transparent;
+      font: inherit;
+      font-weight: inherit;
+      cursor: pointer;
     }
 
     .nav-item__toggle span {
@@ -903,7 +908,7 @@
       <nav class="nav-links" aria-label="Main navigation">
           <a href="../">Home</a>
           <div class="nav-item">
-            <a class="nav-item__toggle" href="../marathon/" aria-haspopup="true" aria-expanded="false">Events <span aria-hidden="true">&#9662;</span></a>
+            <button class="nav-item__toggle" type="button" aria-haspopup="true">Events <span aria-hidden="true">&#9662;</span></button>
             <div class="nav-dropdown" aria-label="Events submenu">
               <a href="../marathon/">Marathon</a>
               <a href="../half-marathon/">Half Marathon</a>
@@ -914,7 +919,7 @@
             </div>
           </div>
           <div class="nav-item">
-            <a class="nav-item__toggle" href="../race-times/" aria-haspopup="true" aria-expanded="false">Race Info <span aria-hidden="true">&#9662;</span></a>
+            <button class="nav-item__toggle" type="button" aria-haspopup="true">Race Info <span aria-hidden="true">&#9662;</span></button>
             <div class="nav-dropdown" aria-label="Race Info submenu">
               <a href="../race-times/">Race Times</a>
               <a href="../race-pack-collection/">Race Pack Collection</a>
