@@ -1078,10 +1078,45 @@
 
       .next-card__bottom,
       .quick-notes,
-      .day-tabs,
       .alert-grid,
       .sponsor-grid {
         grid-template-columns: 1fr;
+      }
+
+      .day-tabs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .day-card {
+        padding: 18px;
+      }
+
+      .day-card strong {
+        margin-top: 8px;
+        font-size: 1.85rem;
+      }
+
+      .day-card p {
+        margin-top: 8px;
+        font-size: 0.92rem;
+        line-height: 1.35;
+      }
+
+      .timeline-group__head {
+        padding: 20px;
+      }
+
+      .timeline-group__head h3 {
+        font-size: 1.9rem;
+      }
+
+      .race-row {
+        padding: 20px;
+      }
+
+      .race-time {
+        font-size: 2.45rem;
       }
 
       .section {
@@ -1269,14 +1304,14 @@
         <div class="schedule-layout">
           <aside class="day-tabs" aria-label="Race days">
             <div class="day-card day-card--active">
-              <span>Day one</span>
-              <strong>Saturday 25 July</strong>
-              <p>Family Fun Run afternoon start.</p>
+              <span>Saturday 25 July</span>
+              <strong>Family Run</strong>
+              <p>3:00pm start.</p>
             </div>
             <div class="day-card">
-              <span>Day two</span>
-              <strong>Sunday 26 July</strong>
-              <p>Marathon through 2km events from early morning.</p>
+              <span>Sunday 26 July</span>
+              <strong>Main events</strong>
+              <p>Marathon, half marathon, 10km, 5km and 2km.</p>
             </div>
           </aside>
 
