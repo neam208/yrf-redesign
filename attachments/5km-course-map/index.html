@@ -41,6 +41,17 @@
     h1 { margin: 14px 0 0; color: var(--navy-900); font-family: "Barlow Condensed", Impact, sans-serif; font-size: clamp(4rem, 12vw, 8.8rem); line-height: 0.86; letter-spacing: 0; text-transform: uppercase; }
     .intro { max-width: 620px; color: var(--muted); font-size: 1.06rem; font-weight: 700; line-height: 1.65; }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+
+    .attachment-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: -4px 0 22px;
+    }
+
+    .attachment-actions .button {
+      min-height: 52px;
+    }
     .viewer { overflow: hidden; border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); }
     .viewer__bar { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 16px 18px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.84rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
     .viewer__content { background: #f8fbff; }
@@ -52,7 +63,39 @@
     @media (max-width: 780px) {
       .top-strip .wrap, .nav, .hero { align-items: flex-start; flex-direction: column; display: flex; }
       main { padding-top: 46px; }
-      .viewer iframe { height: 72vh; }
+
+      h1 {
+        font-size: clamp(3.25rem, 18vw, 5.8rem);
+      }
+
+      .attachment-actions {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        margin: 0 0 16px;
+        padding: 10px 0;
+        background: var(--sky);
+      }
+
+      .attachment-actions .button {
+        width: 100%;
+      }
+
+      .viewer__bar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 13px 14px;
+        font-size: 0.72rem;
+      }
+
+      .viewer iframe {
+        height: 58vh;
+      }
+
+      .viewer img {
+        width: 100%;
+      }
+      .viewer iframe { height: 58vh; }
     }
   </style>
 </head>
@@ -68,6 +111,9 @@
       <div>
       </div>
     </section>
+    <div class="attachment-actions">
+      <a class="button" href="https://yrf.com.au/wp-content/uploads/2026/06/YRF26-5km-Run-Map.pdf" target="_blank" rel="noopener">Open / download file</a>
+    </div>
     <section class="viewer" aria-label="5km Course Map">
       <div class="viewer__bar"><span>5km Course Map</span><span>YRF attachment viewer</span></div>
       <div class="viewer__content">
