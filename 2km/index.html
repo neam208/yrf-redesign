@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Merchandise | Yeppoon Running Festival</title>
+  <title>Ian Weigh Toyota 2km Dash | Yeppoon Running Festival</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -22,8 +22,14 @@
       --radius: 8px;
     }
 
-    * { box-sizing: border-box; }
-    html, body { overflow-x: hidden; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
 
     body {
       margin: 0;
@@ -33,8 +39,15 @@
       line-height: 1.5;
     }
 
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .wrap {
       width: min(1140px, calc(100% - 40px));
@@ -85,7 +98,10 @@
       box-shadow: 0 14px 28px rgba(197, 47, 53, 0.18);
     }
 
-    .brand img { width: 184px; height: auto; }
+    .brand img {
+      width: 184px;
+      height: auto;
+    }
 
     .nav-links {
       display: flex;
@@ -210,7 +226,9 @@
       transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
     }
 
-    .button:hover { transform: translateY(-2px); }
+    .button:hover {
+      transform: translateY(-2px);
+    }
 
     .button--primary {
       color: var(--white);
@@ -218,42 +236,49 @@
       box-shadow: 0 14px 32px rgba(197, 47, 53, 0.26);
     }
 
-    .button--primary:hover { background: var(--red-700); }
-    .button--light { color: var(--navy); background: var(--white); }
+    .button--primary:hover {
+      background: var(--red-700);
+    }
+
+    .button--light {
+      color: var(--navy);
+      background: var(--white);
+    }
+
     .button--outline {
       color: var(--white);
       border-color: rgba(255, 255, 255, 0.55);
       background: rgba(255, 255, 255, 0.08);
     }
 
-    .hero {
+    .event-hero {
       position: relative;
       color: var(--white);
       background:
-        linear-gradient(90deg, rgba(4, 7, 57, 0.94) 0%, rgba(7, 11, 97, 0.74) 46%, rgba(7, 11, 97, 0.14) 100%),
-        url("https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-173.jpg?w=3000&ssl=1") center / cover no-repeat;
+        linear-gradient(90deg, rgba(4, 7, 57, 0.95) 0%, rgba(7, 11, 97, 0.78) 48%, rgba(7, 11, 97, 0.16) 100%),
+        url("https://yrf.com.au/wp-content/uploads/2025/10/2025-YRF-197-1.jpg") center / cover no-repeat;
       isolation: isolate;
     }
 
-    .hero::after {
+    .event-hero::after {
       position: absolute;
       right: -8vw;
       bottom: -58px;
-      z-index: -1;
       width: 45vw;
       height: 124px;
       background: var(--red);
       content: "";
       transform: skewX(-24deg);
+      z-index: -1;
     }
 
-    .hero .wrap {
+    .event-hero .wrap {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 390px;
+      grid-template-columns: minmax(0, 1fr) 360px;
       gap: 54px;
       align-items: end;
-      min-height: 590px;
-      padding: 78px 0 108px;
+      min-height: 610px;
+      padding: 82px 0 116px;
     }
 
     .eyebrow {
@@ -275,7 +300,9 @@
       content: "";
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       margin: 0;
       font-family: "Barlow Condensed", Inter, sans-serif;
       line-height: 0.95;
@@ -283,23 +310,23 @@
     }
 
     h1 {
-      max-width: 760px;
-      font-size: clamp(4.1rem, 8.5vw, 8.4rem);
+      max-width: 720px;
+      font-size: clamp(4.5rem, 10vw, 9rem);
       font-weight: 800;
     }
 
     h1 span {
       display: block;
       color: var(--red);
-      font-size: 0.58em;
+      font-size: 0.55em;
     }
 
     .hero-copy {
-      max-width: 650px;
+      max-width: 640px;
       margin: 24px 0 0;
-      color: rgba(255, 255, 255, 0.84);
+      color: rgba(255, 255, 255, 0.82);
       font-size: 1.12rem;
-      font-weight: 650;
+      font-weight: 600;
     }
 
     .hero-actions {
@@ -309,65 +336,74 @@
       margin-top: 32px;
     }
 
-    .feature-product {
+    .sponsor-panel {
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: var(--radius);
-      background: rgba(4, 7, 57, 0.58);
+      background: rgba(4, 7, 57, 0.54);
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
       backdrop-filter: blur(14px);
     }
 
-    .feature-product img {
-      width: 100%;
-      aspect-ratio: 1 / 0.9;
-      object-fit: cover;
-      background: #f3f6fb;
-    }
-
-    .feature-product__body {
+    .sponsor-panel__top {
       padding: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
     }
 
-    .feature-product span {
-      display: block;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+    .sponsor-panel img {
+      width: 210px;
+      margin-bottom: 18px;
     }
 
-    .feature-product strong {
-      display: block;
-      margin-top: 10px;
-      font-family: "Barlow Condensed", Inter, sans-serif;
-      font-size: 3rem;
-      line-height: 0.95;
-      text-transform: uppercase;
-    }
-
-    .feature-product p {
-      margin: 14px 0 0;
+    .sponsor-panel p {
+      margin: 0;
       color: rgba(255, 255, 255, 0.78);
       font-weight: 700;
+    }
+
+    .sponsor-panel__bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .mini-stat {
+      padding: 22px;
+      background: rgba(4, 7, 57, 0.62);
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .mini-stat span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.84rem;
+      font-weight: 800;
     }
 
     .quick-facts {
       position: relative;
       z-index: 3;
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 1px;
-      margin-top: -58px;
+      margin-top: -62px;
       overflow: hidden;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
     .fact {
-      min-height: 134px;
-      padding: 26px;
+      min-height: 132px;
+      padding: 24px;
       background: var(--white);
     }
 
@@ -385,13 +421,18 @@
       margin-top: 10px;
       color: var(--navy);
       font-family: "Barlow Condensed", Inter, sans-serif;
-      font-size: 2.1rem;
+      font-size: 2rem;
       line-height: 1;
       text-transform: uppercase;
     }
 
-    .section { padding: 102px 0; }
-    .section--soft { background: linear-gradient(180deg, var(--sky), #fff); }
+    .section {
+      padding: 102px 0;
+    }
+
+    .section--soft {
+      background: linear-gradient(180deg, var(--sky), #fff);
+    }
 
     .section-heading {
       display: flex;
@@ -402,189 +443,253 @@
     }
 
     .section-heading h2 {
-      max-width: 680px;
+      max-width: 660px;
       color: var(--navy-900);
       font-size: clamp(3rem, 6vw, 5.4rem);
       font-weight: 800;
     }
 
     .section-heading p {
-      max-width: 440px;
+      max-width: 430px;
       margin: 0;
       color: var(--muted);
       font-weight: 700;
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .product-card {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--white);
-      box-shadow: 0 14px 34px rgba(7, 11, 97, 0.08);
-    }
-
-    .product-card img {
-      width: 100%;
-      aspect-ratio: 1 / 0.9;
-      object-fit: cover;
-      background: #f3f6fb;
-    }
-
-    .product-card__body {
-      padding: 26px;
-    }
-
-    .product-card__meta {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .product-card h3 {
-      color: var(--navy);
-      font-size: 2.2rem;
-    }
-
-    .price {
-      color: var(--red);
-      font-family: "Barlow Condensed", Inter, sans-serif;
-      font-size: 2.5rem;
-      font-weight: 800;
-      line-height: 0.9;
-      white-space: nowrap;
-    }
-
-    .product-card p {
-      margin: 16px 0 0;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .tag {
-      padding: 7px 10px;
-      border-radius: 999px;
-      color: var(--navy);
-      background: var(--sky);
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .extras-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .extra-card {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--white);
-      box-shadow: 0 14px 34px rgba(7, 11, 97, 0.08);
-    }
-
-    .extra-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 240px;
-      object-fit: cover;
-      background: #f3f6fb;
-    }
-
-    .extra-card__body {
-      padding: 28px;
-    }
-
-    .extra-card h3 {
-      color: var(--navy);
-      font-size: 2.1rem;
-    }
-
-    .extra-card p {
-      margin: 14px 0 0;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .order-panel {
+    .content-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 360px;
-      gap: 24px;
-      align-items: stretch;
-      overflow: hidden;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .prose-panel,
+    .side-panel,
+    .price-card,
+    .course-step,
+    .map-panel,
+    .prize-panel {
+      border: 1px solid var(--line);
       border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .prose-panel {
+      padding: 36px;
+    }
+
+    .prose-panel p {
+      margin: 0 0 18px;
+      color: #31384f;
+      font-weight: 600;
+    }
+
+    .prose-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    .side-panel {
+      position: sticky;
+      top: 116px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(7, 11, 97, 0.12);
+    }
+
+    .side-panel__head {
+      padding: 26px;
       color: var(--white);
-      background:
-        linear-gradient(90deg, rgba(4, 7, 57, 0.96), rgba(7, 11, 97, 0.72)),
-        url("https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2024-YRF-29.jpg?w=2048&ssl=1") center / cover no-repeat;
-      box-shadow: var(--shadow);
+      background: var(--navy);
     }
 
-    .order-panel__copy {
-      padding: 42px;
+    .side-panel__head h3 {
+      font-size: 2rem;
     }
 
-    .order-panel h2 {
-      max-width: 650px;
-      font-size: clamp(3rem, 6vw, 5.2rem);
-    }
-
-    .order-panel p {
-      max-width: 660px;
-      margin: 16px 0 0;
-      color: rgba(255, 255, 255, 0.78);
-      font-weight: 750;
-    }
-
-    .order-panel__actions {
+    .side-panel__body {
       display: grid;
-      align-content: center;
-      gap: 12px;
-      padding: 42px;
-      background: rgba(4, 7, 57, 0.42);
+      gap: 14px;
+      padding: 22px;
     }
 
-    .info-grid {
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .detail-row strong {
+      color: var(--ink);
+      text-align: right;
+    }
+
+    .price-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
-    .info-card {
+    .price-card {
       padding: 28px;
+    }
+
+    .price-card h3 {
+      color: var(--navy);
+      font-size: 2rem;
+    }
+
+    .price {
+      margin: 18px 0 10px;
+      color: var(--red);
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 0.9;
+    }
+
+    .price-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .course-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .map-panel {
+      overflow: hidden;
+      background: var(--navy-900);
+    }
+
+    .map-panel img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .map-panel a {
+      display: block;
+      padding: 18px 22px;
+      color: var(--white);
+      font-weight: 900;
+    }
+
+    .course-steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .course-step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      padding: 22px;
+    }
+
+    .course-step span {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--red);
+      font-weight: 900;
+    }
+
+    .course-step h3 {
+      color: var(--navy);
+      font-size: 1.7rem;
+    }
+
+    .course-step p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .inclusion-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .inclusion {
+      min-height: 150px;
+      padding: 24px;
       border-radius: var(--radius);
       color: var(--white);
       background: var(--navy);
     }
 
-    .info-card--red { background: var(--red); }
-
-    .info-card h3 {
-      font-size: 2.1rem;
+    .inclusion strong {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 900;
     }
 
-    .info-card p {
-      margin: 12px 0 0;
+    .inclusion span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 700;
+    }
+
+    .prize-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .prize-panel {
+      padding: 28px;
+    }
+
+    .prize-panel h3 {
+      color: var(--navy);
+      font-size: 2rem;
+    }
+
+    .prize-panel p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .cta-band {
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(4, 7, 57, 0.96), rgba(7, 11, 97, 0.72)),
+        url("https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-63.jpg?w=3000&ssl=1") center / cover no-repeat;
+    }
+
+    .cta-band .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 70px 0;
+    }
+
+    .cta-band h2 {
+      max-width: 620px;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+    }
+
+    .cta-band p {
+      max-width: 560px;
+      margin: 16px 0 0;
       color: rgba(255, 255, 255, 0.78);
-      font-weight: 750;
+      font-weight: 700;
     }
 
 
@@ -735,7 +840,9 @@
       padding: 64px 0;
     }
 
-    .footer img { width: 210px; }
+    .footer img {
+      width: 210px;
+    }
 
     .footer p,
     .footer a {
@@ -769,8 +876,9 @@
 
     @media (max-width: 980px) {
       .nav .wrap,
-      .hero .wrap,
-      .order-panel,
+      .event-hero .wrap,
+      .content-grid,
+      .course-layout,
       .footer .wrap {
         grid-template-columns: 1fr;
       }
@@ -786,26 +894,32 @@
         gap: 16px 22px;
       }
 
-      .hero .wrap {
+      .event-hero .wrap {
+        align-items: start;
         min-height: auto;
         padding: 72px 0 110px;
       }
 
-      .feature-product { max-width: 520px; }
+      .sponsor-panel {
+        max-width: 520px;
+      }
 
       .quick-facts,
-      .product-grid,
-      .info-grid {
+      .price-grid,
+      .inclusion-grid,
+      .prize-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .extras-grid {
-        grid-template-columns: 1fr;
+      .side-panel {
+        position: static;
       }
     }
 
     @media (max-width: 640px) {
-      .wrap { width: min(100% - 28px, 1140px); }
+      .wrap {
+        width: min(100% - 28px, 1140px);
+      }
 
       .top-strip .wrap {
         align-items: flex-start;
@@ -820,57 +934,70 @@
         gap: 12px;
       }
 
-      .brand { padding: 11px 14px; }
-      .brand img { width: 158px; }
-      .nav-links { display: none; }
+      .brand {
+        padding: 11px 14px;
+      }
+
+      .brand img {
+        width: 158px;
+      }
+
+      .nav-links {
+        display: none;
+      }
 
       .nav .button {
         min-height: 48px;
         padding-inline: 18px;
       }
 
-      .hero {
-        background-position: 60% center;
+      .event-hero {
+        background-position: 58% center;
       }
 
-      .hero .wrap {
+      .event-hero .wrap {
         padding: 58px 0 94px;
       }
 
       h1 {
-        font-size: clamp(4.1rem, 17vw, 6.2rem);
+        font-size: clamp(4.1rem, 18vw, 6.2rem);
       }
 
       .hero-actions .button,
-      .order-panel .button {
+      .cta-band .button {
         width: 100%;
       }
 
+      .sponsor-panel__bottom,
       .quick-facts,
-      .product-grid,
-      .info-grid,
-      .extra-card {
+      .price-grid,
+      .course-layout,
+      .inclusion-grid,
+      .prize-grid {
         grid-template-columns: 1fr;
       }
 
-      .section { padding: 76px 0; }
+      .section {
+        padding: 76px 0;
+      }
 
       .section-heading {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .product-card__meta {
+      .prose-panel {
+        padding: 26px;
+      }
+
+      .course-step {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-band .wrap {
+        align-items: stretch;
         flex-direction: column;
-      }
-
-      .extra-card img {
-        min-height: 260px;
-      }
-
-      .order-panel__copy,
-      .order-panel__actions {
-        padding: 30px;
+        padding: 58px 0;
       }
     }
   </style>
@@ -925,100 +1052,156 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="event-hero">
       <div class="wrap">
         <div>
-          <p class="eyebrow">Official YRF gear</p>
-          <h1>Merchandise <span>& Shirts</span></h1>
-          <p class="hero-copy">Order limited-series YRF apparel and race-weekend extras during registration, or choose Merchandise Only if you have already entered.</p>
+          <p class="eyebrow">Ian Weigh Toyota</p>
+          <h1>2km <span>Dash</span></h1>
+          <p class="hero-copy">A short, energetic 2km Dash from Anzac Parade to Yeppoon Lagoon, designed for young runners, families, walkers, and anyone wanting a fun festival finish.</p>
           <div class="hero-actions">
-            <a class="button button--light" href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Order Now</a>
-            <a class="button button--outline" href="../race-pack-collection/">Collection Details</a>
+            <a class="button button--light" href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Register Now</a>
+            <a class="button button--outline" href="#course">View Course</a>
           </div>
         </div>
 
-        <aside class="feature-product" aria-label="Featured merchandise">
-          <img src="https://yrf.com.au/wp-content/uploads/2025/10/Gemini_Generated_Image_q6lzm9q6lzm9q6lz-1024x848.png" alt="YRF running t-shirt">
-          <div class="feature-product__body">
-            <span>Featured item</span>
-            <strong>YRF Running Tee</strong>
-            <p>Limited-series event apparel inspired by Yeppoon and race weekend.</p>
+        <aside class="sponsor-panel" aria-label="2km sponsor">
+          <div class="sponsor-panel__top">
+            <img src="https://yrf.com.au/wp-content/uploads/2026/02/Toyota-Dealership-Ian-Weigh-Vertical-White.png" alt="Ian Weigh Toyota">
+            <p>Ian Weigh Toyota proudly supports the 2km Dash.</p>
+          </div>
+          <div class="sponsor-panel__bottom">
+            <div class="mini-stat">
+              <strong>9:15am</strong>
+              <span>Race start</span>
+            </div>
+            <div class="mini-stat">
+              <strong>No cut off</strong>
+              <span>Time limit</span>
+            </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <div class="wrap quick-facts" aria-label="Merchandise quick facts">
+    <div class="wrap quick-facts" aria-label="2km quick facts">
       <div class="fact">
-        <span>Order via</span>
-        <strong>Race Roster</strong>
+        <span>Date</span>
+        <strong>26 July</strong>
       </div>
       <div class="fact">
-        <span>Already entered?</span>
-        <strong>Merch only</strong>
+        <span>Distance</span>
+        <strong>2km</strong>
       </div>
       <div class="fact">
-        <span>Delivery</span>
-        <strong>Collect only</strong>
+        <span>Start</span>
+        <strong>Anzac Pde</strong>
       </div>
       <div class="fact">
-        <span>Pickup</span>
-        <strong>Race pack</strong>
+        <span>Finish</span>
+        <strong>Lagoon</strong>
+      </div>
+      <div class="fact">
+        <span>Arrive</span>
+        <strong>30 mins</strong>
       </div>
     </div>
 
     <section class="section section--soft">
+      <div class="wrap content-grid">
+        <article class="prose-panel">
+          <div class="section-heading">
+            <h2>2km overview</h2>
+          </div>
+          <p>The YRF Ian Weigh Toyota 2km Dash is the festival’s most accessible event, giving younger runners, families, and community participants a chance to be part of the race weekend atmosphere.</p>
+          <p>The course keeps the energy high and the distance achievable, with a simple route from Anzac Parade to the Yeppoon Lagoon finish precinct.</p>
+          <p>It is ideal for kids, first-time participants, families, walkers, and supporters who want a lively race experience without a long distance.</p>
+        </article>
+
+        <aside class="side-panel" aria-label="Key event details">
+          <div class="side-panel__head">
+            <h3>Key details</h3>
+          </div>
+          <div class="side-panel__body">
+            <div class="detail-row"><span>Date</span><strong>26 July 2026</strong></div>
+            <div class="detail-row"><span>Start time</span><strong>9:15am</strong></div>
+            <div class="detail-row"><span>Start</span><strong>Anzac Parade</strong></div>
+            <div class="detail-row"><span>Finish</span><strong>Yeppoon Lagoon</strong></div>
+            <div class="detail-row"><span>Cut off</span><strong>No cut off</strong></div>
+            <a class="button button--primary" href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Register Now</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="wrap">
         <div class="section-heading">
-          <h2>Shop event apparel</h2>
-          <p>Product cards make the range, prices, and sizing notes easier to compare than stacked text and images.</p>
+          <h2>Entry pricing</h2>
+          <p>Put price deadlines into clear cards so runners can understand urgency without hunting through body copy.</p>
+        </div>
+        <div class="price-grid">
+          <article class="price-card">
+            <h3>Early Bird</h3>
+            <div class="price">$25</div>
+            <p>Closes midnight 21 May. Includes admin and processing fees.</p>
+          </article>
+          <article class="price-card">
+            <h3>Regular</h3>
+            <div class="price">$30</div>
+            <p>Closes midnight 24 July. Best for runners entering during race week.</p>
+          </article>
+          <article class="price-card">
+            <h3>Premium Late</h3>
+            <div class="price">$45</div>
+            <p>Closes midnight 25 July. Online entries close 25 July at midnight.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="course" class="section section--soft">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Course experience</h2>
+          <p>The current page has beautiful course copy. This layout turns it into scannable moments while keeping the full story available.</p>
         </div>
 
-        <div class="product-grid">
-          <article class="product-card">
-            <img src="https://yrf.com.au/wp-content/uploads/2025/10/Gemini_Generated_Image_q6lzm9q6lzm9q6lz-1024x848.png" alt="YRF running t-shirt">
-            <div class="product-card__body">
-              <div class="product-card__meta">
-                <h3>YRF Running T-Shirt</h3>
-                <div class="price">$50</div>
-              </div>
-              <p>Exclusive quality YRF running tee. Unisex sizing.</p>
-              <div class="tag-row">
-                <span class="tag">Unisex</span>
-                <a class="tag" href="https://yrf.com.au/wp-content/uploads/2025/10/2f4ef832a8c42c9952b53ef5188f7b6f-768x1024.jpg">Size chart</a>
-              </div>
-            </div>
-          </article>
+        <div class="course-layout">
+          <div class="map-panel">
+            <img src="https://yrf.com.au/wp-content/uploads/2026/06/YRF26-2km-Run-Map-724x1024.jpg" alt="YRF 2km Dash course map">
+            <a href="https://yrf.com.au/wp-content/uploads/2026/06/YRF26-2km-Run-Map.pdf">Open enlarged course map</a>
+          </div>
 
-          <article class="product-card">
-            <img src="https://yrf.com.au/wp-content/uploads/2025/10/Gemini_Generated_Image_byj03cbyj03cbyj0-1024x848.png" alt="YRF running singlet">
-            <div class="product-card__body">
-              <div class="product-card__meta">
-                <h3>YRF Running Singlet</h3>
-                <div class="price">$44</div>
+          <div class="course-steps">
+            <article class="course-step">
+              <span>01</span>
+              <div>
+                <h3>Oceanfront start</h3>
+                <p>Begin on Anzac Parade with the festival energy already building around the start line.</p>
               </div>
-              <p>Exclusive quality YRF running singlet for warm coastal race conditions.</p>
-              <div class="tag-row">
-                <span class="tag">Unisex</span>
-                <a class="tag" href="https://yrf.com.au/wp-content/uploads/2025/10/2f4ef832a8c42c9952b53ef5188f7b6f-768x1024.jpg">Size chart</a>
+            </article>
+            <article class="course-step">
+              <span>02</span>
+              <div>
+                <h3>Coastal rhythm</h3>
+                <p>Keep the route simple, social, and achievable with support close by from start to finish.</p>
               </div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <img src="https://yrf.com.au/wp-content/uploads/2025/10/Gemini_Generated_Image_q6lzm9q6lzm9q6lz-1024x848.png" alt="YRF kids shirt">
-            <div class="product-card__body">
-              <div class="product-card__meta">
-                <h3>YRF Kids Shirt</h3>
-                <div class="price">$44</div>
+            </article>
+            <article class="course-step">
+              <span>03</span>
+              <div>
+                <h3>Turnaround focus</h3>
+                <p>Move toward Yeppoon Lagoon as the crowd and finish-line energy come into view.</p>
               </div>
-              <p>Event shirt option for kids and family runners.</p>
-              <div class="tag-row">
-                <span class="tag">Kids</span>
-                <a class="tag" href="https://yrf.com.au/wp-content/uploads/2025/10/2f4ef832a8c42c9952b53ef5188f7b6f-768x1024.jpg">Size chart</a>
+            </article>
+            <article class="course-step">
+              <span>04</span>
+              <div>
+                <h3>Lagoon finish</h3>
+                <p>Finish at Yeppoon Lagoon, where every 2km participant gets a proper festival finish.</p>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1026,73 +1209,48 @@
     <section class="section">
       <div class="wrap">
         <div class="section-heading">
-          <h2>Available extras</h2>
-          <p>The current page includes extra product imagery, so this section gives those items a cleaner home.</p>
+          <h2>Included with entry</h2>
+          <p>These are important conversion details, so they deserve a clean visual treatment.</p>
         </div>
-
-        <div class="extras-grid">
-          <article class="extra-card">
-            <img src="https://yrf.com.au/wp-content/uploads/2025/10/2f4ef832a8c42c9952b53ef5188f7b6f-768x1024.jpg" alt="YRF merchandise size chart and extras">
-            <div class="extra-card__body">
-              <h3>Visors, bottles and more</h3>
-              <p>Other items are available through the registration merchandise flow. Keep the product range visible without crowding the main apparel cards.</p>
-              <div class="tag-row">
-                <span class="tag">Race extras</span>
-                <span class="tag">Order online</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="extra-card">
-            <img src="https://yrf.com.au/wp-content/uploads/2026/04/Untitled-design-16-1024x1024.jpg" alt="YRF gym towel">
-            <div class="extra-card__body">
-              <h3>YRF Gym Towel</h3>
-              <p>A practical race-weekend and training accessory, presented as an add-on item in the catalogue.</p>
-              <div class="tag-row">
-                <span class="tag">Accessory</span>
-                <span class="tag">Limited range</span>
-              </div>
-            </div>
-          </article>
+        <div class="inclusion-grid">
+          <div class="inclusion"><strong>Race bib & timing tag</strong><span>Personalised bib cutoff is 7 July.</span></div>
+          <div class="inclusion"><strong>On-course hydration</strong><span>Simple on-course support across the 2km route.</span></div>
+          <div class="inclusion"><strong>Post-race recovery</strong><span>Finish area support after the run.</span></div>
+          <div class="inclusion"><strong>Finisher medal & gift</strong><span>All 2km entries receive a surprise race gift.</span></div>
         </div>
       </div>
     </section>
 
     <section class="section section--soft">
       <div class="wrap">
-        <div class="order-panel">
-          <div class="order-panel__copy">
-            <h2>Order during registration</h2>
-            <p>Merchandise can be ordered during the race registration process. If you have already registered, select Merchandise Only from the Race Roster registration dropdown.</p>
-          </div>
-          <div class="order-panel__actions">
-            <a class="button button--light" href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Order Now</a>
-            <a class="button button--outline" href="../race-pack-collection/">Collection Times</a>
-          </div>
+        <div class="section-heading">
+          <h2>Rules & prizes</h2>
+          <p>Important details stay easy to skim without making the page feel like a document dump.</p>
+        </div>
+        <div class="prize-grid">
+          <article class="prize-panel">
+            <h3>Course rules</h3>
+            <p>Prams and wheelchairs are welcome in the 2km but must start at the back of the field. Bikes, scooters, handcycles and crank cycles are not permitted.</p>
+          </article>
+          <article class="prize-panel">
+            <h3>Overall winners</h3>
+            <p>Male and female 2km placegetters receive cash prizes: 1st $100, 2nd $50, and 3rd $25.</p>
+          </article>
+          <article class="prize-panel">
+            <h3>Age categories</h3>
+            <p>The 2km has no category winner awards listed. The first Under 16 male and female finisher receive a $150 bonus thanks to JS Performance Project; if they also win overall, they receive both prizes.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="cta-band">
       <div class="wrap">
-        <div class="section-heading">
-          <h2>Before you order</h2>
-          <p>These notes reduce support questions and make collection expectations clear.</p>
+        <div>
+          <h2>Ready for the 2km Dash?</h2>
+          <p>Register for the Ian Weigh Toyota 2km Dash and lock in your place on the Yeppoon start line.</p>
         </div>
-        <div class="info-grid">
-          <article class="info-card">
-            <h3>No postage</h3>
-            <p>Merchandise must be collected with your race pack before race day and will not be posted.</p>
-          </article>
-          <article class="info-card info-card--red">
-            <h3>Collect with pack</h3>
-            <p>Use the published race pack collection windows to pick up ordered merchandise.</p>
-          </article>
-          <article class="info-card">
-            <h3>Check sizing</h3>
-            <p>Use the size charts before ordering, especially for unisex tees and singlets.</p>
-          </article>
-        </div>
+        <a class="button button--light" href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Register Now</a>
       </div>
     </section>
   </main>
@@ -1180,8 +1338,8 @@
         <ul>
           <li><a href="../race-times/">Race Times</a></li>
           <li><a href="../race-pack-collection/">Race Pack Collection</a></li>
-          <li><a href="../event-guide/">Event Guide</a>
-              <a href="../prizes/">Prizes</a></li>
+          <li><a href="../prizes/">Prizes</a></li>
+            <li><a href="../roads/">Roads</a></li>
           <li><a href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Register Now</a></li>
         </ul>
       </div>

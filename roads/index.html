@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Race Times | Yeppoon Running Festival</title>
+  <title>Roads & Safety | Yeppoon Running Festival</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -642,7 +642,7 @@
       color: var(--white);
       background:
         linear-gradient(90deg, rgba(4, 7, 57, 0.96), rgba(7, 11, 97, 0.72)),
-        url("https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/2025-YRF-63.jpg?w=3000&ssl=1") center / cover no-repeat;
+        url("https://yrf.com.au/wp-content/uploads/2026/06/2025-YRF-6-small-web.jpg") center / cover no-repeat;
       box-shadow: var(--shadow);
     }
 
@@ -874,6 +874,723 @@
       font-weight: 700;
     }
 
+
+
+    .aid-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .aid-step,
+    .special-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 14px 32px rgba(7, 11, 97, 0.08);
+    }
+
+    .aid-step span,
+    .special-card span {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--red);
+      font-weight: 900;
+    }
+
+    .aid-step h3,
+    .special-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .aid-step p,
+    .special-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .map-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .map-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .map-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .map-copy {
+      display: grid;
+      align-content: center;
+      gap: 18px;
+      padding: 34px;
+      border-radius: var(--radius);
+      color: var(--white);
+      background: linear-gradient(135deg, var(--navy-900), var(--navy));
+      box-shadow: var(--shadow);
+    }
+
+    .map-copy h3 {
+      margin: 0;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      line-height: 0.92;
+      text-transform: uppercase;
+    }
+
+    .map-copy p {
+      max-width: 620px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .special-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .special-card--wide {
+      grid-column: 1 / -1;
+      background: linear-gradient(180deg, rgba(197, 47, 53, 0.08), var(--white));
+      border-color: rgba(197, 47, 53, 0.28);
+    }
+
+    .product-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .product-card {
+      min-height: 150px;
+      padding: 22px;
+      border-radius: var(--radius);
+      color: var(--white);
+      background: linear-gradient(135deg, rgba(7, 11, 97, 0.94), rgba(197, 47, 53, 0.78));
+      display: grid;
+      align-content: end;
+    }
+
+    .product-card strong {
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 2.2rem;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .product-card span {
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.74);
+      font-weight: 800;
+    }
+
+
+
+    .team-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .team-photo {
+      min-height: 560px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(7, 11, 97, 0.14), rgba(7, 11, 97, 0.52)),
+        url("https://yrf.com.au/wp-content/uploads/2026/06/2025-YRF-6-small-web.jpg") center / cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .team-card-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .team-card,
+    .tent-card,
+    .benefit-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 14px 32px rgba(7, 11, 97, 0.08);
+    }
+
+    .team-card h3,
+    .tent-card h3,
+    .benefit-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.1rem;
+      line-height: 1.25;
+    }
+
+    .team-card p,
+    .tent-card p,
+    .benefit-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .team-card strong,
+    .tent-card strong {
+      color: var(--red);
+    }
+
+    .prize-panel-large {
+      display: grid;
+      grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+      gap: 24px;
+      align-items: center;
+      padding: 34px;
+      border-radius: var(--radius);
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(197, 47, 53, 0.96), rgba(7, 11, 97, 0.94)),
+        var(--navy);
+      box-shadow: var(--shadow);
+    }
+
+    .prize-amount {
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(5rem, 12vw, 9rem);
+      font-weight: 900;
+      line-height: 0.85;
+      text-transform: uppercase;
+    }
+
+    .prize-panel-large h3 {
+      margin: 0 0 12px;
+      color: var(--white);
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(2.4rem, 4.8vw, 4.5rem);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .prize-panel-large p {
+      max-width: 650px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .tent-grid,
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .tent-card span,
+    .benefit-card span {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--red);
+      font-weight: 900;
+    }
+
+    .tent-card--highlight {
+      background: linear-gradient(180deg, rgba(197, 47, 53, 0.08), var(--white));
+      border-color: rgba(197, 47, 53, 0.28);
+    }
+
+
+
+    .guide-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .guide-cover {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .guide-cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 580px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .guide-copy-panel {
+      display: grid;
+      align-content: center;
+      gap: 22px;
+      padding: 38px;
+      border-radius: var(--radius);
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(197, 47, 53, 0.18) 0 28%, transparent 28% 100%),
+        linear-gradient(135deg, var(--navy-900), var(--navy));
+      box-shadow: var(--shadow);
+    }
+
+    .guide-copy-panel h3 {
+      margin: 0;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(2.8rem, 5vw, 5.4rem);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .guide-copy-panel p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .guide-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 14px 32px rgba(7, 11, 97, 0.08);
+    }
+
+    .guide-card span {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--red);
+      font-weight: 900;
+    }
+
+    .guide-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.1rem;
+      line-height: 1.25;
+    }
+
+    .guide-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    .status-panel {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: rgba(7, 11, 97, 0.18);
+      box-shadow: var(--shadow);
+    }
+
+    .status-cell {
+      padding: 28px;
+      background: var(--white);
+    }
+
+    .status-cell span {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status-cell strong {
+      display: block;
+      color: var(--navy);
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 2.8rem;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+
+
+    .podium-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .podium-card {
+      display: grid;
+      gap: 16px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 14px 32px rgba(7, 11, 97, 0.08);
+    }
+
+    .podium-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .podium-card ul,
+    .category-card ul {
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .podium-card li,
+    .category-card li {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .podium-card li strong,
+    .category-card li strong {
+      color: var(--red);
+    }
+
+    .category-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .category-callout {
+      padding: 34px;
+      border-radius: var(--radius);
+      color: var(--white);
+      background: linear-gradient(135deg, var(--navy-900), var(--navy));
+      box-shadow: var(--shadow);
+    }
+
+    .category-callout h3 {
+      margin: 0 0 12px;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .category-callout p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .category-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+
+    .category-card h3 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .presentation-band {
+      display: grid;
+      grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr);
+      gap: 1px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: rgba(7, 11, 97, 0.18);
+      box-shadow: var(--shadow);
+    }
+
+    .presentation-band > div {
+      padding: 30px;
+      background: var(--white);
+    }
+
+    .presentation-band span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .presentation-band strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--navy);
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+
+
+    .closure-table {
+      display: grid;
+      gap: 12px;
+    }
+
+    .closure-row {
+      display: grid;
+      grid-template-columns: 220px 240px minmax(0, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(7, 11, 97, 0.12);
+      box-shadow: 0 12px 28px rgba(7, 11, 97, 0.06);
+    }
+
+    .closure-row > div {
+      padding: 20px;
+      background: var(--white);
+    }
+
+    .closure-row span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .closure-row strong {
+      color: var(--navy);
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .closure-row p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .road-map-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .road-map {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .road-map img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .road-copy {
+      display: grid;
+      align-content: center;
+      gap: 22px;
+      padding: 38px;
+      border-radius: var(--radius);
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(197, 47, 53, 0.18) 0 28%, transparent 28% 100%),
+        linear-gradient(135deg, var(--navy-900), var(--navy));
+      box-shadow: var(--shadow);
+    }
+
+    .road-copy h3 {
+      margin: 0;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(2.8rem, 5vw, 5.4rem);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .road-copy p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .safety-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 14px 32px rgba(7, 11, 97, 0.08);
+    }
+
+    .safety-card span {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--red);
+      font-weight: 900;
+    }
+
+    .safety-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.1rem;
+      line-height: 1.25;
+    }
+
+    .safety-card p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 980px) {
+      .closure-row,
+      .road-map-feature,
+      .safety-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .road-map img {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .podium-grid,
+      .category-layout,
+      .category-grid,
+      .presentation-band {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .guide-feature,
+      .guide-grid,
+      .status-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-cover img {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .team-feature,
+      .prize-panel-large,
+      .tent-grid,
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-photo {
+        min-height: 360px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .aid-flow,
+      .product-strip,
+      .special-grid,
+      .map-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .map-card img {
+        min-height: 360px;
+      }
+    }
+
     @media (max-width: 980px) {
       .nav .wrap,
       .hero .wrap,
@@ -1057,173 +1774,140 @@
     <section class="hero">
       <div class="wrap">
         <div>
-          <p class="eyebrow">Race weekend schedule</p>
-          <h1>Race Times <span>& Details</span></h1>
-          <p class="hero-copy">Everything runners and supporters need to know at a glance: start times, arrival guidance, bib collection reminders, and useful race-weekend links.</p>
+          <p class="eyebrow">Road closures & safety</p>
+          <h1>Roads <span>& Safety</span></h1>
+          <p class="hero-copy">Council and police-approved road closures will support a safe Yeppoon Running Festival on Sunday 26 July 2026, with traffic management in place across key course areas.</p>
           <div class="hero-actions">
-            <a class="button button--light" href="#schedule">View Schedule</a>
-            <a class="button button--outline" href="../race-pack-collection/">Race Pack Collection</a>
+            <a class="button button--light" href="#closure-table">View Closures</a>
+            <a class="button button--outline" href="#road-map">Road Map</a>
           </div>
         </div>
 
-        <aside class="next-card" aria-label="First race start">
+        <aside class="next-card" aria-label="Road closure summary">
           <div class="next-card__top">
-            <span>First Sunday start</span>
-            <strong>5:45am</strong>
-            <p>Bendigo Community Bank Emu Park and Yeppoon Marathon begins the Sunday race schedule.</p>
+            <span>Main closure window</span>
+            <strong>4:15am</strong>
+            <p>Most road closures run from 4:15am to 1:00pm on Sunday 26 July 2026.</p>
           </div>
           <div class="next-card__bottom">
             <div class="mini-stat">
-              <b>30 min</b>
-              <small>Arrive early</small>
+              <b>26 Jul</b>
+              <small>Race day</small>
             </div>
             <div class="mini-stat">
-              <b>No bibs</b>
-              <small>Sunday morning</small>
+              <b>1:00pm</b>
+              <small>Target reopen</small>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <div class="wrap quick-notes" aria-label="Important race time notes">
-      <div class="note-card">
-        <span>Saturday</span>
-        <strong>Family Fun Run</strong>
-      </div>
-      <div class="note-card">
-        <span>Sunday</span>
-        <strong>Main events</strong>
-      </div>
-      <div class="note-card">
-        <span>Reminder</span>
-        <strong>Collect bibs early</strong>
-      </div>
+    <div class="wrap quick-notes" aria-label="Road closure quick notes">
+      <div class="note-card"><span>Approved</span><strong>Council & police</strong></div>
+      <div class="note-card"><span>Managed by</span><strong>Traffic teams</strong></div>
+      <div class="note-card"><span>Drivers</span><strong>Plan ahead</strong></div>
     </div>
-
-    <section id="schedule" class="section section--soft">
-      <div class="wrap">
-        <div class="section-heading">
-          <h2>Race weekend timetable</h2>
-          <p>The schedule is structured as day groups, with big start times and event names that are easy to read on mobile at the venue.</p>
-        </div>
-
-        <div class="schedule-layout">
-          <aside class="day-tabs" aria-label="Race days">
-            <div class="day-card day-card--active">
-              <span>Day one</span>
-              <strong>Saturday 25 July</strong>
-              <p>Family Fun Run afternoon start.</p>
-            </div>
-            <div class="day-card">
-              <span>Day two</span>
-              <strong>Sunday 26 July</strong>
-              <p>Marathon through 2km events from early morning.</p>
-            </div>
-          </aside>
-
-          <div class="timeline">
-            <section class="timeline-group" aria-labelledby="saturday-heading">
-              <div class="timeline-group__head">
-                <h3 id="saturday-heading">Saturday 25 July 2026</h3>
-                <span>1 event</span>
-              </div>
-              <div class="race-row">
-                <div class="race-time">3:00pm</div>
-                <div class="race-name">
-                  <strong>JRT Family Fun Run</strong>
-                  <span>Arrive 30 minutes before race start. Bibs must be collected before arriving at the start.</span>
-                </div>
-                <a class="race-action" href="../family-fun-run/">Event page</a>
-              </div>
-            </section>
-
-            <section class="timeline-group" aria-labelledby="sunday-heading">
-              <div class="timeline-group__head">
-                <h3 id="sunday-heading">Sunday 26 July 2026</h3>
-                <span>5 events</span>
-              </div>
-              <div class="race-row">
-                <div class="race-time">5:45am</div>
-                <div class="race-name">
-                  <strong>Bendigo Community Bank Emu Park and Yeppoon Marathon</strong>
-                  <span>42.2km event. Arrive 30 minutes before race start.</span>
-                </div>
-                <a class="race-action" href="../marathon/">Event page</a>
-              </div>
-              <div class="race-row">
-                <div class="race-time">6:00am</div>
-                <div class="race-name">
-                  <strong>CQUniversity Half Marathon</strong>
-                  <span>21.1km event. Arrive 30 minutes before race start.</span>
-                </div>
-                <a class="race-action" href="../half-marathon/">Event page</a>
-              </div>
-              <div class="race-row">
-                <div class="race-time">6:45am</div>
-                <div class="race-name">
-                  <strong>CQ Radiology 10km</strong>
-                  <span>10km event. Arrive 30 minutes before race start.</span>
-                </div>
-                <a class="race-action" href="../10km/">Event page</a>
-              </div>
-              <div class="race-row">
-                <div class="race-time">8:15am</div>
-                <div class="race-name">
-                  <strong>ProFeet 5km</strong>
-                  <span>5km event. Arrive 30 minutes before race start.</span>
-                </div>
-                <a class="race-action" href="../5km/">Event page</a>
-              </div>
-              <div class="race-row">
-                <div class="race-time">9:15am</div>
-                <div class="race-name">
-                  <strong>Stockland 2km</strong>
-                  <span>2km event. Arrive 30 minutes before race start.</span>
-                </div>
-                <a class="race-action" href="../2km/">Event page</a>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-heading">
-          <h2>Important reminders</h2>
-          <p>These notes are the highest-risk information on the page, so they get their own cards instead of being buried under the timetable.</p>
-        </div>
-        <div class="alert-grid">
-          <article class="alert-card">
-            <h3>Arrive 30 minutes early</h3>
-            <p>Please arrive 30 minutes prior to your race start so you have time to park, warm up, find your start area, and settle in.</p>
-          </article>
-          <article class="alert-card alert-card--red">
-            <h3>No Sunday bib collection</h3>
-            <p>Bibs for all Sunday events must be collected at the bib collection points on Thursday, Friday, or Saturday. Bibs will not be available at the race start.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section class="section section--soft">
       <div class="wrap">
-        <div class="race-pack-panel">
-          <div class="race-pack-panel__copy">
-            <h2>Collect your race pack before race day</h2>
-            <p>Make the bib collection pathway obvious from the race-times page. This avoids last-minute confusion and gives runners a clear next step.</p>
-          </div>
-          <div class="race-pack-panel__actions">
-            <a class="button button--light" href="../race-pack-collection/">View Collection Details</a>
-            <a class="button button--outline" href="../faq/">Read FAQ</a>
+        <div class="section-heading">
+          <h2>Important road closure information</h2>
+          <p>Road closures are managed to protect participants, spectators, and road users while minimising community disruption.</p>
+        </div>
+        <div class="safety-grid">
+          <article class="safety-card"><span>01</span><h3>Follow traffic controllers</h3><p>All drivers and pedestrians must follow the instructions of traffic controllers at all times.</p></article>
+          <article class="safety-card"><span>02</span><h3>Allow extra travel time</h3><p>Plan your trip in advance and allow additional time to reach your destination during closures.</p></article>
+          <article class="safety-card"><span>03</span><h3>Roads reopen when safe</h3><p>Organisers are committed to reopening roads as quickly as possible once events are completed.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="closure-table" class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Closure schedule</h2>
+          <p>The table below reflects the live Roads page and keeps the most important timing and access notes easy to scan.</p>
+        </div>
+        <div class="closure-table">
+          <article class="closure-row">
+            <div><span>Time</span><strong>8:30am Fri 24 Jul to 3:00pm Sun 26 Jul</strong></div>
+            <div><span>Location</span><strong>Anzac Parade Car Park</strong></div>
+            <div><span>Description</span><p>Full car park closure at the Sailing Club.</p></div>
+          </article>
+          <article class="closure-row">
+            <div><span>Time</span><strong>4:15am to 1:00pm</strong></div>
+            <div><span>Location</span><strong>Anzac Parade</strong></div>
+            <div><span>Description</span><p>Full closure between Queen Street and Lagoon Place roundabout. No southbound access.</p></div>
+          </article>
+          <article class="closure-row">
+            <div><span>Time</span><strong>4:15am to 1:00pm</strong></div>
+            <div><span>Location</span><strong>Lagoon Place</strong></div>
+            <div><span>Description</span><p>Full road closure.</p></div>
+          </article>
+          <article class="closure-row">
+            <div><span>Time</span><strong>4:15am to 1:00pm</strong></div>
+            <div><span>Location</span><strong>Appleton Drive</strong></div>
+            <div><span>Description</span><p>Southbound lane closure to Yeppoon Road roundabout. Northbound lane open; please use caution.</p></div>
+          </article>
+          <article class="closure-row">
+            <div><span>Time</span><strong>4:15am to 1:00pm</strong></div>
+            <div><span>Location</span><strong>Scenic Highway</strong></div>
+            <div><span>Description</span><p>Southbound lane closure from Yeppoon Road roundabout to Matthew Flinders Drive. Northbound lane open; please use caution.</p></div>
+          </article>
+          <article class="closure-row">
+            <div><span>Time</span><strong>4:15am to 1:00pm</strong></div>
+            <div><span>Location</span><strong>Matthew Flinders Drive</strong></div>
+            <div><span>Description</span><p>Southbound lane closure to Scenic Highway. No left turn onto Scenic Highway; use Ivey St W or Taranganba Rd. Northbound lane open; please use caution.</p></div>
+          </article>
+          <article class="closure-row">
+            <div><span>Time</span><strong>4:15am to 12:00pm</strong></div>
+            <div><span>Location</span><strong>Matthew Flinders Drive</strong></div>
+            <div><span>Description</span><p>Full road closure from 107 Matthew Flinders Drive to Elma Street.</p></div>
+          </article>
+          <article class="closure-row">
+            <div><span>Time</span><strong>4:15am to 1:00pm</strong></div>
+            <div><span>Location</span><strong>Scenic Highway</strong></div>
+            <div><span>Description</span><p>From Matthew Flinders Drive to Old Scenic Highway, southbound lane closure. Northbound lane open; please use caution.</p></div>
+          </article>
+          <article class="closure-row">
+            <div><span>Time</span><strong>4:15am to 7:45am</strong></div>
+            <div><span>Location</span><strong>Scenic Highway</strong></div>
+            <div><span>Description</span><p>From Old Scenic Highway to Mulumbin Street, southbound lane closure. Northbound lane open; please use caution.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="road-map" class="section section--soft">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Road closure map</h2>
+          <p>Use the full map alongside the closure table to plan race-day movement around Yeppoon.</p>
+        </div>
+        <div class="road-map-feature">
+          <a class="road-map" href="https://yrf.com.au/wp-content/uploads/2026/06/YRF26-Road-Closures_v2.pdf" aria-label="Open YRF road closure map PDF">
+            <img src="https://yrf.com.au/wp-content/uploads/2026/06/YRF26-Road-Closures_v2-724x1024.jpg" alt="YRF 2026 road closure map">
+          </a>
+          <div class="road-copy">
+            <h3>Plan ahead for race day</h3>
+            <p>Several road closures will be in place across Yeppoon. Check the map and closure schedule before travelling, and follow traffic controller instructions on the day.</p>
+            <p>Your patience helps keep the course safe and supports a major community event for the Capricorn Coast.</p>
+            <a class="button button--light" href="https://yrf.com.au/wp-content/uploads/2026/06/YRF26-Road-Closures_v2.pdf">Open Road Closure PDF</a>
           </div>
         </div>
       </div>
     </section>
 
-    
+    <section class="cta-band">
+      <div class="wrap">
+        <div>
+          <h2>Pair roads with race timing</h2>
+          <p>Check start times and race pack collection details before finalising your race-weekend travel plan.</p>
+        </div>
+        <a class="button button--light" href="../race-times/">View Race Times</a>
+      </div>
+    </section>
   </main>
 
   <section class="footer-sponsors" aria-label="Event sponsors">
@@ -1308,8 +1992,9 @@
         <h3>Useful links</h3>
         <ul>
           <li><a href="../race-pack-collection/">Race Pack Collection</a></li>
-          <li><a href="../event-guide/">Event Guide</a>
-              <a href="../prizes/">Prizes</a></li>
+          <li><a href="../event-guide/">Event Guide</a></li>
+            <li><a href="../prizes/">Prizes</a></li>
+            <li><a href="../roads/">Roads</a></li>
           <li><a href="../race-results/">Results</a></li>
           <li><a href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Register Now</a></li>
         </ul>

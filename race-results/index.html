@@ -105,11 +105,113 @@
 
     .nav-links {
       display: flex;
+      align-items: center;
       justify-content: center;
       gap: 28px;
-      color: var(--navy-900);
       font-size: 0.9rem;
-      font-weight: 900;
+      font-weight: 800;
+      color: var(--navy-900);
+    }
+
+    .nav-links > a,
+    .nav-item__toggle {
+      position: relative;
+      padding: 10px 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav-links > a::after,
+    .nav-item__toggle::after {
+      position: absolute;
+      right: 0;
+      bottom: 4px;
+      left: 0;
+      height: 2px;
+      background: var(--red);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links > a:hover::after,
+    .nav-links > a:focus-visible::after,
+    .nav-item:hover .nav-item__toggle::after,
+    .nav-item:focus-within .nav-item__toggle::after {
+      transform: scaleX(1);
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-item__toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-item__toggle span {
+      font-size: 0.72em;
+      transform: translateY(-1px);
+    }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      z-index: 40;
+      display: grid;
+      min-width: 230px;
+      padding: 10px;
+      border: 1px solid rgba(7, 11, 97, 0.08);
+      border-top: 3px solid var(--red);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 22px 55px rgba(7, 11, 97, 0.16);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 8px);
+      transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+      visibility: hidden;
+    }
+
+    .nav-dropdown::before {
+      position: absolute;
+      top: -15px;
+      right: 0;
+      left: 0;
+      height: 15px;
+      content: "";
+    }
+
+    .nav-item:hover .nav-dropdown,
+    .nav-item:focus-within .nav-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0);
+      visibility: visible;
+    }
+
+    .nav-dropdown a {
+      padding: 10px 12px;
+      border-radius: 6px;
+      color: var(--navy-900);
+      font-size: 0.84rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: background 160ms ease, color 160ms ease;
+    }
+
+    .nav-dropdown a:hover,
+    .nav-dropdown a:focus-visible {
+      color: var(--red);
+      background: rgba(197, 47, 53, 0.08);
+      outline: none;
     }
 
     .button {
@@ -394,6 +496,26 @@
       background: #f8fafe;
     }
 
+    .result-card.is-hidden {
+      display: none;
+    }
+
+    .results-empty {
+      display: none;
+      grid-column: 1 / -1;
+      padding: 30px;
+      border: 1px dashed rgba(7, 11, 97, 0.2);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.7);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .results-empty.is-visible {
+      display: block;
+    }
+
     .result-card__meta {
       display: flex;
       align-items: center;
@@ -538,6 +660,142 @@
       margin: 16px 0 0;
       color: rgba(255, 255, 255, 0.78);
       font-weight: 700;
+    }
+
+
+    .footer-sponsors {
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(197, 47, 53, 0.18) 0 22%, transparent 22% 100%),
+        var(--navy-900);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-sponsors__inner {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 30px;
+    }
+
+    .footer-sponsors__top {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    .footer-sponsors h2 {
+      margin: 0;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: clamp(2.2rem, 4.4vw, 4rem);
+      line-height: 0.94;
+      text-transform: uppercase;
+    }
+
+    .footer-sponsors__note {
+      max-width: 360px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .sponsor-lanes {
+      display: grid;
+      gap: 9px;
+      padding: 10px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.24);
+    }
+
+    .sponsor-lane {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      align-items: center;
+      min-height: var(--lane-height);
+      overflow: hidden;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .sponsor-lane__label {
+      display: grid;
+      align-self: stretch;
+      place-items: center start;
+      padding: 0 16px;
+      color: var(--red);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      line-height: 1.25;
+      text-transform: uppercase;
+      border-right: 1px solid rgba(16, 21, 47, 0.1);
+    }
+
+    .sponsor-lane__viewport {
+      position: relative;
+      overflow: hidden;
+      mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+    }
+
+    .sponsor-lane__track {
+      display: flex;
+      width: max-content;
+      align-items: center;
+      gap: var(--lane-gap);
+      padding: 0 var(--lane-gap);
+      animation: sponsor-scroll var(--lane-speed) linear infinite;
+    }
+
+    .sponsor-lane:hover .sponsor-lane__track {
+      animation-play-state: paused;
+    }
+
+    .sponsor-logo {
+      display: grid;
+      width: var(--logo-slot);
+      height: var(--lane-height);
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .sponsor-logo img {
+      max-width: 100%;
+      max-height: var(--logo-height);
+      object-fit: contain;
+      filter: saturate(0.96);
+    }
+
+    .sponsor-lane--major {
+      --lane-height: 82px;
+      --logo-height: 56px;
+      --logo-slot: 172px;
+      --lane-gap: 26px;
+      --lane-speed: 38s;
+    }
+
+    .sponsor-lane--event {
+      --lane-height: 62px;
+      --logo-height: 42px;
+      --logo-slot: 150px;
+      --lane-gap: 42px;
+      --lane-speed: 30s;
+    }
+
+    .sponsor-lane--supporting {
+      --lane-height: 50px;
+      --logo-height: 32px;
+      --logo-slot: 116px;
+      --lane-gap: 24px;
+      --lane-speed: 42s;
+    }
+
+    @keyframes sponsor-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     .footer {
@@ -709,17 +967,41 @@
 
   <header class="nav" aria-label="Site header">
     <div class="wrap">
-      <a class="brand" href="/redesign/" aria-label="Yeppoon Running Festival home">
+      <a class="brand" href="../" aria-label="Yeppoon Running Festival home">
         <img src="https://i0.wp.com/yrf.com.au/wp-content/uploads/2025/09/YRF_SSP_Logo-copy-1.png?w=1500&ssl=1" alt="Yeppoon Running Festival">
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="/redesign/">Home</a>
-        <a href="/redesign/marathon/">Events</a>
-        <a href="/redesign/race-times/">Race Info</a>
-        <a href="/redesign/visit-yeppoon/">Visit Yeppoon</a>
-        <a href="https://yrf.com.au/faq/">FAQ</a>
-        <a href="https://yrf.com.au/contact/">Contact</a>
-      </nav>
+          <a href="../">Home</a>
+          <div class="nav-item">
+            <a class="nav-item__toggle" href="../marathon/" aria-haspopup="true" aria-expanded="false">Events <span aria-hidden="true">&#9662;</span></a>
+            <div class="nav-dropdown" aria-label="Events submenu">
+              <a href="../marathon/">Marathon</a>
+              <a href="../half-marathon/">Half Marathon</a>
+              <a href="../10km/">10km</a>
+              <a href="../5km/">5km</a>
+              <a href="../2km/">2km</a>
+              <a href="../family-fun-run/">Family Run</a>
+            </div>
+          </div>
+          <div class="nav-item">
+            <a class="nav-item__toggle" href="../race-times/" aria-haspopup="true" aria-expanded="false">Race Info <span aria-hidden="true">&#9662;</span></a>
+            <div class="nav-dropdown" aria-label="Race Info submenu">
+              <a href="../race-times/">Race Times</a>
+              <a href="../race-pack-collection/">Race Pack Collection</a>
+              <a href="../race-results/">Race Results</a>
+              <a href="../merchandise/">Merchandise</a>
+              <a href="../aid-stations/">Aid Stations</a>
+              <a href="../teams/">Teams</a>
+              <a href="../event-guide/">Event Guide</a>
+              <a href="../prizes/">Prizes</a>
+              <a href="../roads/">Roads</a>
+            </div>
+          </div>
+          <a href="../visit-yeppoon/">Visit Yeppoon</a>
+          <a href="../stories/">News</a>
+          <a href="../faq/">FAQ</a>
+          <a href="../contact/">Contact</a>
+        </nav>
       <a class="button button--primary" href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Register Now</a>
     </div>
   </header>
@@ -752,16 +1034,16 @@
       <div class="tool-card">
         <span>Find results</span>
         <strong>Search by year</strong>
-        <input type="search" placeholder="Type 2025, 2024, 2023..." aria-label="Search results by year">
+        <input id="results-search" type="search" placeholder="Type 2025, 2024, 2023..." aria-label="Search results by year" autocomplete="off">
       </div>
       <div class="tool-card">
         <span>Filter</span>
-        <strong>All years</strong>
-        <select aria-label="Filter result years">
-          <option>All results</option>
-          <option>Latest results</option>
-          <option>RaceTec archive</option>
-          <option>Timing Wizards archive</option>
+        <strong id="results-filter-label">All years</strong>
+        <select id="results-filter" aria-label="Filter result years">
+          <option value="all">All results</option>
+          <option value="latest">Latest results</option>
+          <option value="racetec">RaceTec archive</option>
+          <option value="timing-wizards">Timing Wizards archive</option>
         </select>
       </div>
       <div class="tool-card">
@@ -779,7 +1061,7 @@
         </div>
 
         <div class="results-grid">
-          <article class="result-card result-card--pending">
+          <article class="result-card result-card--pending" data-year="2026" data-source="pending" data-keywords="2026 coming soon current year">
             <div>
               <div class="result-card__meta">
                 <div class="year">2026</div>
@@ -790,7 +1072,7 @@
             <span class="card-action">Check back after event</span>
           </article>
 
-          <a class="result-card result-card--featured" href="https://results.sportseventservices.com.au/results.aspx?CId=16287&RId=6470">
+          <a class="result-card result-card--featured" data-year="2025" data-source="latest" data-keywords="2025 latest sports event services" href="https://results.sportseventservices.com.au/results.aspx?CId=16287&RId=6470">
             <div>
               <div class="result-card__meta">
                 <div class="year">2025</div>
@@ -801,7 +1083,7 @@
             <span class="card-action">Open results</span>
           </a>
 
-          <a class="result-card" href="https://results.timingwizards.com.au/results.aspx?CId=7&RId=20270">
+          <a class="result-card" data-year="2024" data-source="timing-wizards" data-keywords="2024 archive timing wizards" href="https://results.timingwizards.com.au/results.aspx?CId=7&RId=20270">
             <div>
               <div class="result-card__meta">
                 <div class="year">2024</div>
@@ -812,7 +1094,7 @@
             <span class="card-action">Open results</span>
           </a>
 
-          <a class="result-card" href="https://results.timingwizards.com.au/results.aspx?CId=7&RId=20187">
+          <a class="result-card" data-year="2023" data-source="timing-wizards" data-keywords="2023 archive timing wizards" href="https://results.timingwizards.com.au/results.aspx?CId=7&RId=20187">
             <div>
               <div class="result-card__meta">
                 <div class="year">2023</div>
@@ -823,7 +1105,7 @@
             <span class="card-action">Open results</span>
           </a>
 
-          <a class="result-card" href="https://results.timingwizards.com.au/Results.aspx?CId=7&RId=884">
+          <a class="result-card" data-year="2022" data-source="timing-wizards" data-keywords="2022 archive timing wizards" href="https://results.timingwizards.com.au/Results.aspx?CId=7&RId=884">
             <div>
               <div class="result-card__meta">
                 <div class="year">2022</div>
@@ -834,7 +1116,7 @@
             <span class="card-action">Open results</span>
           </a>
 
-          <a class="result-card" href="https://www.racetecresults.com/results.aspx?CId=7&RId=841">
+          <a class="result-card" data-year="2021" data-source="racetec" data-keywords="2021 archive racetec" href="https://www.racetecresults.com/results.aspx?CId=7&RId=841">
             <div>
               <div class="result-card__meta">
                 <div class="year">2021</div>
@@ -845,7 +1127,7 @@
             <span class="card-action">Open results</span>
           </a>
 
-          <a class="result-card" href="https://results.timingwizards.com.au/Results.aspx?CId=7&RId=797">
+          <a class="result-card" data-year="2020" data-source="timing-wizards" data-keywords="2020 archive timing wizards" href="https://results.timingwizards.com.au/Results.aspx?CId=7&RId=797">
             <div>
               <div class="result-card__meta">
                 <div class="year">2020</div>
@@ -856,7 +1138,7 @@
             <span class="card-action">Open results</span>
           </a>
 
-          <a class="result-card" href="https://www.racetecresults.com/results.aspx?CId=7&RId=749">
+          <a class="result-card" data-year="2019" data-source="racetec" data-keywords="2019 archive racetec" href="https://www.racetecresults.com/results.aspx?CId=7&RId=749">
             <div>
               <div class="result-card__meta">
                 <div class="year">2019</div>
@@ -867,7 +1149,7 @@
             <span class="card-action">Open results</span>
           </a>
 
-          <a class="result-card" href="https://racetecresults.com/results.aspx?CId=7&RId=671">
+          <a class="result-card" data-year="2018" data-source="racetec" data-keywords="2018 archive racetec" href="https://racetecresults.com/results.aspx?CId=7&RId=671">
             <div>
               <div class="result-card__meta">
                 <div class="year">2018</div>
@@ -878,7 +1160,7 @@
             <span class="card-action">Open results</span>
           </a>
 
-          <a class="result-card" href="https://www.racetecresults.com/results.aspx?CId=7&RId=598">
+          <a class="result-card" data-year="2017" data-source="racetec" data-keywords="2017 archive racetec" href="https://www.racetecresults.com/results.aspx?CId=7&RId=598">
             <div>
               <div class="result-card__meta">
                 <div class="year">2017</div>
@@ -888,6 +1170,8 @@
             </div>
             <span class="card-action">Open results</span>
           </a>
+
+          <p class="results-empty" id="results-empty" role="status">No results match that search. Try another year or switch the filter back to all results.</p>
         </div>
       </div>
     </section>
@@ -896,7 +1180,7 @@
       <div class="wrap">
         <div class="section-heading">
           <h2>Course records</h2>
-          <p>Instead of hiding records behind a heading, give the page a structured records area that can be updated once verified times are supplied.</p>
+          <p>All course records start from 2025 because the festival courses changed and the 2km event was introduced.</p>
         </div>
 
         <div class="records-layout">
@@ -909,34 +1193,46 @@
             </div>
             <div class="record-row">
               <span>Marathon</span>
-              <span>To be confirmed</span>
-              <span>To be confirmed</span>
-              <span>Archive</span>
+              <span>Ryan Hawken<br>2:45:58</span>
+              <span>Anne Brieger<br>3:12:59</span>
+              <span>2025</span>
             </div>
             <div class="record-row">
               <span>Half Marathon</span>
-              <span>To be confirmed</span>
-              <span>To be confirmed</span>
-              <span>Archive</span>
+              <span>Sean Dunleavy<br>1:17:47</span>
+              <span>Danielle Sansonetti<br>1:35:10</span>
+              <span>2025</span>
             </div>
             <div class="record-row">
               <span>10km</span>
-              <span>To be confirmed</span>
-              <span>To be confirmed</span>
-              <span>Archive</span>
+              <span>Sam Russell<br>35:09</span>
+              <span>Nicola Keegan<br>43:54</span>
+              <span>2025</span>
             </div>
             <div class="record-row">
               <span>5km</span>
-              <span>To be confirmed</span>
-              <span>To be confirmed</span>
-              <span>Archive</span>
+              <span>Jack Veach<br>17:28</span>
+              <span>Shana Paterson<br>19:45</span>
+              <span>2025</span>
+            </div>
+            <div class="record-row">
+              <span>5km Under 16</span>
+              <span>Lachlan Fry<br>20:16</span>
+              <span>Jacinta Jones<br>21:20</span>
+              <span>2025</span>
+            </div>
+            <div class="record-row">
+              <span>2km</span>
+              <span>Drew Mossman<br>8:31</span>
+              <span>Fern Jarrett<br>9:24</span>
+              <span>2025</span>
             </div>
           </div>
 
           <aside class="records-note">
-            <h3>Make records feel official</h3>
-            <p>Once the verified record times are available, this area can show event, athlete, time, and year in a table that looks deliberate rather than tacked on.</p>
-            <a class="button button--light" href="https://yrf.com.au/contact/">Submit a records query</a>
+            <h3>New courses, new records</h3>
+            <p>Course records reset from the 2025 event. The under-16 5km records use the official U15 category shown in the published results.</p>
+            <a class="button button--light" href="../contact/">Submit a records query</a>
           </aside>
         </div>
       </div>
@@ -953,6 +1249,70 @@
     </section>
   </main>
 
+  <section class="footer-sponsors" aria-label="Event sponsors">
+    <div class="footer-sponsors__inner">
+      <div class="footer-sponsors__top">
+        <h2>Backed by local partners</h2>
+        <p class="footer-sponsors__note">Major partners lead the way, with every supporter recognised across the festival footer.</p>
+      </div>
+      <div class="sponsor-lanes">
+        <div class="sponsor-lane sponsor-lane--major">
+          <div class="sponsor-lane__label">Major<br>partners</div>
+          <div class="sponsor-lane__viewport"><div class="sponsor-lane__track">
+              <a class="sponsor-logo" href="https://sspaccountants.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/SSP-350.png" alt="Shanahan Swaffield Partners"></a>
+              <a class="sponsor-logo" href="https://www.cqu.edu.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/CQU-Cropped.png" alt="CQU University"></a>
+              <a class="sponsor-logo" href="https://www.bendigobank.com.au/branch/qld/community-bank-yeppoon/" target="_blank" rel="noopener"><img src="../assets/sponsors/bendigo-bank-logo.png" alt="Bendigo Bank"></a>
+              <a class="sponsor-logo" href="https://cqradiology.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/CQR-PMS186_Horiz-2-NEW-copy.png" alt="CQ Radiology"></a>
+              <a class="sponsor-logo" href="https://www.jrtgroup.com/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/JRT-230v2.png" alt="JRT"></a>
+              <a class="sponsor-logo" href="https://www.profeetpodiatry.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/PRF_Master_Brand_Logo_PMS.jpg" alt="Pro Feet"></a>
+              <a class="sponsor-logo" href="https://www.ianweightoyota.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2026/02/Toyota-Dealership-Ian-Weigh-Vertical-Black.png" alt="Ian Weigh Toyota"></a>
+              <a class="sponsor-logo" href="https://sspaccountants.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/SSP-350.png" alt="Shanahan Swaffield Partners"></a>
+              <a class="sponsor-logo" href="https://www.cqu.edu.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/CQU-Cropped.png" alt="CQU University"></a>
+              <a class="sponsor-logo" href="https://www.bendigobank.com.au/branch/qld/community-bank-yeppoon/" target="_blank" rel="noopener"><img src="../assets/sponsors/bendigo-bank-logo.png" alt="Bendigo Bank"></a>
+              <a class="sponsor-logo" href="https://cqradiology.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/CQR-PMS186_Horiz-2-NEW-copy.png" alt="CQ Radiology"></a>
+              <a class="sponsor-logo" href="https://www.jrtgroup.com/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/JRT-230v2.png" alt="JRT"></a>
+              <a class="sponsor-logo" href="https://www.profeetpodiatry.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/PRF_Master_Brand_Logo_PMS.jpg" alt="Pro Feet"></a>
+              <a class="sponsor-logo" href="https://www.ianweightoyota.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2026/02/Toyota-Dealership-Ian-Weigh-Vertical-Black.png" alt="Ian Weigh Toyota"></a>
+          </div></div>
+        </div>
+        <div class="sponsor-lane sponsor-lane--event">
+          <div class="sponsor-lane__label">Event<br>partners</div>
+          <div class="sponsor-lane__viewport"><div class="sponsor-lane__track">
+              <a class="sponsor-logo" href="https://www.raywhite.com/office/yeppoon.qld?type=selling" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/03/Ray-White-primary-logo-yellow-CMYK-nads.jpg" alt="Ray White"></a>
+              <a class="sponsor-logo" href="https://kbsc.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/Keppel-Bay-Sailing-Club_Logo-Stacked.png" alt="Keppel Bay Sailing Club"></a>
+              <a class="sponsor-logo" href="https://www.mater.org.au/group/news/mater-private-hospital-rockhampton" target="_blank" rel="noopener"><img src="https://yrf.com.au/wp-content/uploads/2026/04/Logo_Mater-Colour.png" alt="Mater Private Hospital Rockhampton"></a>
+              <a class="sponsor-logo" href="https://www.raywhite.com/office/yeppoon.qld?type=selling" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/03/Ray-White-primary-logo-yellow-CMYK-nads.jpg" alt="Ray White"></a>
+              <a class="sponsor-logo" href="https://kbsc.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/01/Keppel-Bay-Sailing-Club_Logo-Stacked.png" alt="Keppel Bay Sailing Club"></a>
+              <a class="sponsor-logo" href="https://www.mater.org.au/group/news/mater-private-hospital-rockhampton" target="_blank" rel="noopener"><img src="https://yrf.com.au/wp-content/uploads/2026/04/Logo_Mater-Colour.png" alt="Mater Private Hospital Rockhampton"></a>
+          </div></div>
+        </div>
+        <div class="sponsor-lane sponsor-lane--supporting">
+          <div class="sponsor-lane__label">Supporting<br>partners</div>
+          <div class="sponsor-lane__viewport"><div class="sponsor-lane__track">
+              <a class="sponsor-logo" href="https://movementimprovement.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/move-improve-footer.png" alt="Movement Improvement"></a>
+              <a class="sponsor-logo" href="https://shokz.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/02/Shokz_Logo_RGB.png" alt="Shokz"></a>
+              <a class="sponsor-logo" href="https://ventou.com.au/custom-running-apparel-australia" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2022/08/Untitled-design-31.png" alt="Ventou"></a>
+              <a class="sponsor-logo" href="https://www.cooberriepark.com.au" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/Cooberrie-Park-Logo-copy.png" alt="Cooberrie Park"></a>
+              <a class="sponsor-logo" href="https://aussiegold.net.au" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2022/08/Untitled-design-34.png" alt="Aussie Gold"></a>
+              <a class="sponsor-logo" href="https://www.keppeldental.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2026/02/KD-Logo_Landscape_CMYK.png" alt="Keppel Dental"></a>
+              <a class="sponsor-logo" href="https://www.australiansportsnutrition.com.au/pages/asn-yeppoon?srsltid=AfmBOor1H1B2FwDL1UbxOfr82pE7HFJQ5FRpVf7uaFYZ6ceDJYqvXP1X" target="_blank" rel="noopener"><img src="https://yrf.com.au/wp-content/uploads/2025/10/ASN-Hi-Res.png" alt="ASN"></a>
+              <a class="sponsor-logo" href="https://www.cqseptic.com/" target="_blank" rel="noopener"><img src="../assets/sponsors/cq-septic-logo.png" alt="CQ Septic and Waste Management"></a>
+              <a class="sponsor-logo" href="https://www.absolutewaste.com.au/" target="_blank" rel="noopener"><img src="../assets/sponsors/absolute-waste-logo.jpg" alt="Absolute Waste"></a>
+              <a class="sponsor-logo" href="https://movementimprovement.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/move-improve-footer.png" alt="Movement Improvement"></a>
+              <a class="sponsor-logo" href="https://shokz.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2025/02/Shokz_Logo_RGB.png" alt="Shokz"></a>
+              <a class="sponsor-logo" href="https://ventou.com.au/custom-running-apparel-australia" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2022/08/Untitled-design-31.png" alt="Ventou"></a>
+              <a class="sponsor-logo" href="https://www.cooberriepark.com.au" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2024/12/Cooberrie-Park-Logo-copy.png" alt="Cooberrie Park"></a>
+              <a class="sponsor-logo" href="https://aussiegold.net.au" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2022/08/Untitled-design-34.png" alt="Aussie Gold"></a>
+              <a class="sponsor-logo" href="https://www.keppeldental.com.au/" target="_blank" rel="noopener"><img src="https://staging-4130-neam208.wpcomstaging.com/wp-content/uploads/2026/02/KD-Logo_Landscape_CMYK.png" alt="Keppel Dental"></a>
+              <a class="sponsor-logo" href="https://www.australiansportsnutrition.com.au/pages/asn-yeppoon?srsltid=AfmBOor1H1B2FwDL1UbxOfr82pE7HFJQ5FRpVf7uaFYZ6ceDJYqvXP1X" target="_blank" rel="noopener"><img src="https://yrf.com.au/wp-content/uploads/2025/10/ASN-Hi-Res.png" alt="ASN"></a>
+              <a class="sponsor-logo" href="https://www.cqseptic.com/" target="_blank" rel="noopener"><img src="../assets/sponsors/cq-septic-logo.png" alt="CQ Septic and Waste Management"></a>
+              <a class="sponsor-logo" href="https://www.absolutewaste.com.au/" target="_blank" rel="noopener"><img src="../assets/sponsors/absolute-waste-logo.jpg" alt="Absolute Waste"></a>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="wrap">
       <div>
@@ -963,16 +1323,17 @@
         <h3>Contact</h3>
         <ul>
           <li><a href="mailto:yrf@thechangeroom.net.au">yrf@thechangeroom.net.au</a></li>
-          <li><a href="https://yrf.com.au/contact/">Yeppoon, QLD</a></li>
-          <li><a href="https://yrf.com.au/faq/">FAQ</a></li>
+          <li><a href="../contact/">Yeppoon, QLD</a></li>
+          <li><a href="../faq/">FAQ</a></li>
         </ul>
       </div>
       <div>
         <h3>Useful links</h3>
         <ul>
-          <li><a href="/redesign/race-times/">Race Times</a></li>
-          <li><a href="/redesign/race-pack-collection/">Race Pack Collection</a></li>
-          <li><a href="https://yrf.com.au/prizes/">Prizes</a></li>
+          <li><a href="../race-times/">Race Times</a></li>
+          <li><a href="../race-pack-collection/">Race Pack Collection</a></li>
+          <li><a href="../prizes/">Prizes</a></li>
+            <li><a href="../roads/">Roads</a></li>
           <li><a href="https://raceroster.com/events/2026/111286/yeppoon-running-festival">Register Now</a></li>
         </ul>
       </div>
@@ -981,5 +1342,46 @@
       <div class="wrap">Yeppoon Running Festival 2026. All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    const resultsSearch = document.querySelector('#results-search');
+    const resultsFilter = document.querySelector('#results-filter');
+    const resultsFilterLabel = document.querySelector('#results-filter-label');
+    const resultsCards = Array.from(document.querySelectorAll('.result-card'));
+    const resultsEmpty = document.querySelector('#results-empty');
+
+    function normalise(value) {
+      return value.trim().toLowerCase();
+    }
+
+    function applyResultsFilter() {
+      const query = normalise(resultsSearch.value);
+      const selectedSource = resultsFilter.value;
+      let visibleCount = 0;
+
+      resultsFilterLabel.textContent = resultsFilter.options[resultsFilter.selectedIndex].text;
+
+      resultsCards.forEach((card) => {
+        const searchText = normalise([
+          card.dataset.year,
+          card.dataset.source,
+          card.dataset.keywords,
+          card.textContent,
+        ].join(' '));
+        const matchesQuery = !query || searchText.includes(query);
+        const matchesSource = selectedSource === 'all' || card.dataset.source === selectedSource;
+        const isVisible = matchesQuery && matchesSource;
+
+        card.classList.toggle('is-hidden', !isVisible);
+        if (isVisible) visibleCount += 1;
+      });
+
+      resultsEmpty.classList.toggle('is-visible', visibleCount === 0);
+    }
+
+    resultsSearch.addEventListener('input', applyResultsFilter);
+    resultsFilter.addEventListener('change', applyResultsFilter);
+    applyResultsFilter();
+  </script>
 </body>
 </html>
