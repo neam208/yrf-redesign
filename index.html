@@ -1485,5 +1485,15 @@
       </div>
     </footer>
   </div>
+  <script>
+    document.querySelectorAll(".sponsor-logo").forEach((link) => {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.open(link.href, "_blank", "noopener");
+      });
+    });
+  </script>
 </body>
 </html>
