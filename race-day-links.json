@@ -1,0 +1,14 @@
+{
+  "liveTracking": {
+    "enabled": false,
+    "url": "",
+    "label": "Live Tracking"
+  },
+  "results": {
+    "enabled": false,
+    "url": "",
+    "label": "View 2026 Results",
+    "year": "2026"
+  },
+  "updatedAt": null
+}

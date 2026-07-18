@@ -1219,7 +1219,7 @@
           <h1>Results <span>& Course Records</span></h1>
           <p class="hero-copy">Find official Yeppoon Running Festival results, check the latest published year, and view current course records in one place.</p>
           <div class="hero-actions">
-            <a class="button button--light" href="https://results.sportseventservices.com.au/results.aspx?CId=16287&RId=6470" target="_blank" rel="noopener">Open 2025 Results</a>
+            <a class="button button--light" href="https://results.sportseventservices.com.au/results.aspx?CId=16287&RId=6470" target="_blank" rel="noopener" data-race-day-link="results">Open 2025 Results</a>
             <a class="button button--outline" href="#records">View Course Records</a>
           </div>
         </div>
@@ -1227,10 +1227,10 @@
         <aside class="latest-card" aria-label="Latest published result">
           <div class="latest-card__top">
             <span>Latest published</span>
-            <strong>2025</strong>
+            <strong data-race-day-results-year>2025</strong>
             <p>Open the official timing portal for the most recent published race results.</p>
           </div>
-          <a class="latest-card__link" href="https://results.sportseventservices.com.au/results.aspx?CId=16287&RId=6470" target="_blank" rel="noopener">View 2025 results →</a>
+          <a class="latest-card__link" href="https://results.sportseventservices.com.au/results.aspx?CId=16287&RId=6470" target="_blank" rel="noopener" data-race-day-link="results" data-race-day-label="View 2026 results →">View 2025 results →</a>
         </aside>
       </div>
     </section>
@@ -1254,7 +1254,7 @@
       <div class="tool-card">
         <span>Current year</span>
         <strong>2026</strong>
-        <input value="Coming soon" aria-label="2026 result status" readonly>
+        <input value="Coming soon" aria-label="2026 result status" data-race-day-results-status readonly>
       </div>
     </div>
 
@@ -1265,16 +1265,16 @@
         </div>
 
         <div class="results-grid">
-          <article class="result-card result-card--pending" data-year="2026" data-source="pending" data-keywords="2026 coming soon current year">
+          <a class="result-card result-card--pending" data-year="2026" data-source="pending" data-keywords="2026 coming soon current year" data-race-day-results-card aria-disabled="true">
             <div>
               <div class="result-card__meta">
                 <div class="year">2026</div>
-                <span class="tag">Coming soon</span>
+                <span class="tag" data-race-day-results-tag>Coming soon</span>
               </div>
-              <p>Results will be added after race weekend once the timing provider publishes them.</p>
+              <p data-race-day-results-copy>Results will be added after race weekend once the timing provider publishes them.</p>
             </div>
-            <span class="card-action">Check back after event</span>
-          </article>
+            <span class="card-action" data-race-day-results-action>Check back after event</span>
+          </a>
 
           <a class="result-card result-card--featured" data-year="2025" data-source="latest" data-keywords="2025 latest sports event services" href="https://results.sportseventservices.com.au/results.aspx?CId=16287&RId=6470" target="_blank" rel="noopener">
             <div>
@@ -1580,5 +1580,6 @@
     resultsFilter.addEventListener('change', applyResultsFilter);
     applyResultsFilter();
   </script>
+  <script src="../assets/race-day-links.js?v=2462aa4f4c23"></script>
 </body>
 </html>
