@@ -23,11 +23,12 @@
     if (label) link.textContent = label;
   }
 
-  function applyLiveTracking(entry) {
+  function applyConfiguredLinks(name, entry, fallbackLabel) {
     if (!isActiveLink(entry)) return;
 
-    document.querySelectorAll('[data-race-day-link="liveTracking"]').forEach((link) => {
-      makeExternalLink(link, entry.url, entry.label || link.dataset.raceDayLabel || "Live Tracking");
+    document.querySelectorAll(`[data-race-day-link="${name}"]`).forEach((link) => {
+      makeExternalLink(link, entry.url, entry.label || link.dataset.raceDayLabel || fallbackLabel);
+      link.hidden = false;
     });
   }
 
@@ -91,7 +92,8 @@
       if (!response.ok) return;
 
       const config = await response.json();
-      applyLiveTracking(config.liveTracking);
+      applyConfiguredLinks("liveTracking", config.liveTracking, "Live Leaderboard");
+      applyConfiguredLinks("mapTracking", config.mapTracking, "Marathon Map Tracker");
       applyResults(config.results);
     } catch {
       // Keep the page's safe default links if the race-day config is unavailable.

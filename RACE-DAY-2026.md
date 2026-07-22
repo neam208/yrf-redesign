@@ -10,7 +10,8 @@ From the repository root, run one command when one or both URLs arrive:
 
 ```bash
 node scripts/set-race-day-links.mjs \
-  --live-tracking "https://example.com/live" \
+  --leaderboard "https://example.com/leaderboard" \
+  --map-tracker "https://example.com/map-tracker" \
   --results "https://example.com/results"
 ```
 
@@ -21,7 +22,7 @@ node scripts/set-race-day-links.mjs --check
 git diff -- race-day-links.json
 ```
 
-The live-tracking link replaces only the primary hero `Register Now` button on the homepage. Registration buttons in the header, mobile menu, footer, and other pages remain unchanged.
+The leaderboard link replaces only the primary hero `Register Now` button on the homepage. The marathon map tracker appears as a second race-day hero button. Registration buttons in the header, mobile menu, footer, and other pages remain unchanged.
 
 The results link updates the race-results hero, latest-results panel, current-year status, and 2026 results card.
 

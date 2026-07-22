@@ -7,7 +7,8 @@ const args = process.argv.slice(2);
 
 function usage() {
   console.log(`Usage:
-  node scripts/set-race-day-links.mjs --live-tracking <url> [--results <url>]
+  node scripts/set-race-day-links.mjs --leaderboard <url> [--map-tracker <url>] [--results <url>]
+  node scripts/set-race-day-links.mjs --live-tracking <url> [--map-tracker <url>] [--results <url>]
   node scripts/set-race-day-links.mjs --results <url>
   node scripts/set-race-day-links.mjs --check`);
 }
@@ -39,7 +40,8 @@ function validateUrl(value, label) {
 
 function validateConfig(config) {
   for (const [name, entry] of Object.entries({
-    "Live tracking": config.liveTracking,
+    "Live leaderboard": config.liveTracking,
+    "Map tracker": config.mapTracking,
     Results: config.results,
   })) {
     if (!entry || typeof entry.enabled !== "boolean") {
@@ -52,8 +54,16 @@ function validateConfig(config) {
 try {
   const config = JSON.parse(await readFile(configFile, "utf8"));
   const checkOnly = args.includes("--check");
-  const liveTrackingUrl = readOption("--live-tracking");
+  const leaderboardUrl = readOption("--leaderboard");
+  const legacyLiveTrackingUrl = readOption("--live-tracking");
+  const mapTrackingUrl = readOption("--map-tracker");
   const resultsUrl = readOption("--results");
+
+  if (leaderboardUrl && legacyLiveTrackingUrl) {
+    throw new Error("Use either --leaderboard or --live-tracking, not both.");
+  }
+
+  const liveTrackingUrl = leaderboardUrl || legacyLiveTrackingUrl;
 
   if (checkOnly) {
     if (args.length !== 1) throw new Error("--check cannot be combined with URL options.");
@@ -62,14 +72,19 @@ try {
     process.exit(0);
   }
 
-  if (!liveTrackingUrl && !resultsUrl) {
+  if (!liveTrackingUrl && !mapTrackingUrl && !resultsUrl) {
     usage();
     process.exit(1);
   }
 
   if (liveTrackingUrl) {
     config.liveTracking.enabled = true;
-    config.liveTracking.url = validateUrl(liveTrackingUrl, "Live tracking");
+    config.liveTracking.url = validateUrl(liveTrackingUrl, "Live leaderboard");
+  }
+
+  if (mapTrackingUrl) {
+    config.mapTracking.enabled = true;
+    config.mapTracking.url = validateUrl(mapTrackingUrl, "Map tracker");
   }
 
   if (resultsUrl) {
@@ -82,7 +97,8 @@ try {
   await writeFile(configFile, `${JSON.stringify(config, null, 2)}\n`);
 
   const enabled = [
-    liveTrackingUrl ? "live tracking" : null,
+    liveTrackingUrl ? "live leaderboard" : null,
+    mapTrackingUrl ? "map tracker" : null,
     resultsUrl ? "results" : null,
   ].filter(Boolean).join(" and ");
   console.log(`Enabled ${enabled} in race-day-links.json.`);
