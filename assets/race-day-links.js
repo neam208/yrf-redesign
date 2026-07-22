@@ -24,9 +24,12 @@
   }
 
   function applyConfiguredLinks(name, entry, fallbackLabel) {
-    if (!isActiveLink(entry)) return;
-
     document.querySelectorAll(`[data-race-day-link="${name}"]`).forEach((link) => {
+      if (!isActiveLink(entry)) {
+        if (name === "mapTracking") link.hidden = true;
+        return;
+      }
+
       makeExternalLink(link, entry.url, entry.label || link.dataset.raceDayLabel || fallbackLabel);
       link.hidden = false;
     });
