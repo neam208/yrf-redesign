@@ -1,0 +1,19 @@
+{
+  "liveTracking": {
+    "enabled": false,
+    "url": "https://results.sportseventservices.com.au/live.aspx?CId=16287&RId=6570",
+    "label": "Live Leaderboard"
+  },
+  "mapTracking": {
+    "enabled": false,
+    "url": "https://results.sportseventservices.com.au/Track.aspx?CId=16287&RId=6570&EId=1",
+    "label": "Marathon Map Tracker"
+  },
+  "results": {
+    "enabled": false,
+    "url": "https://results.sportseventservices.com.au/16287/yrf26",
+    "label": "View 2026 Results",
+    "year": "2026"
+  },
+  "updatedAt": "2026-07-22T06:25:22.599Z"
+}

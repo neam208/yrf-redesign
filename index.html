@@ -239,6 +239,10 @@
       transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
     }
 
+    [data-race-day-link="mapTracking"][hidden] {
+      display: none !important;
+    }
+
     .button:hover {
       transform: translateY(-2px);
     }
@@ -1290,7 +1294,8 @@
             <h1>Run the coast <span>25 & 26 July</span></h1>
             <p>A destination running weekend across Yeppoon's coastline, with race options for marathoners, weekend runners, families, and first-time finishers.</p>
             <div class="hero__actions">
-              <a class="button button--light" href="https://raceroster.com/events/2026/111286/yeppoon-running-festival" target="_blank" rel="noopener">Register Now</a>
+              <a class="button button--light" href="https://raceroster.com/events/2026/111286/yeppoon-running-festival" target="_blank" rel="noopener" data-race-day-link="liveTracking" data-race-day-label="Live Leaderboard">Register Now</a>
+              <a class="button button--outline" data-race-day-link="mapTracking" data-race-day-label="Marathon Map Tracker" hidden>Marathon Map Tracker</a>
               <a class="button button--outline" href="race-times/">View Race Times</a>
               <a class="button button--outline" href="event-guide/">View Event Guide</a>
             </div>
@@ -1498,5 +1503,6 @@
       });
     });
   </script>
+  <script src="assets/race-day-links.js?v=10866fab3bb4"></script>
 </body>
 </html>
